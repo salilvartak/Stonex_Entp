@@ -1,50 +1,45 @@
-import { Check, Cog, Shield, Clock, Award, Truck, Pickaxe, HeartHandshake,BicepsFlexed } from "lucide-react";
+import { Check, Cog, Shield, Clock, Award, Truck, Pickaxe, BicepsFlexed } from "lucide-react";
 
 const features = [
   {
     icon: Cog,
-    title: "Advanced Technology",
-    description: "State-of-the-art Ball Mills, Micronizers, 28 Roller with Classifier Machine and Automatic Grits colour Shorter Machine",
+    title: "Advanced Processing Infrastructure",
+    description: "State-of-the-art Ball Mills, Micronizers, VSI, 28-Roller Classifier Systems, advance Magnetic Separator and Automatic Grits Colour Sorting Technology enable precise processing and consistent product quality",
   },
   {
     icon: Shield,
-    title: "Quality Assured",
-    description: "Strict quality control with in-house laboratory testing at every stage",
+    title: "Stringent Quality Control",
+    description: "Comprehensive in-house testing and stringent quality-control procedures ensure reliable purity, performance, and batch-to-batch consistency",
   },
   {
     icon: Award,
-    title: "Custom Micron Sizes",
-    description: "Ultra-fine to coarse grades available as per customer requirements",
+    title: "Custom Particle Sizes",
+    description: "Customized mineral grades ranging from ultra-fine powder to coarse grits, precisely processed to meet customer exact formulation requirements",
   },
   {
     icon: Clock,
-    title: "Timely Delivery",
-    description: "Efficient logistics ensuring on-time delivery across India",
+    title: "Reliable Supply & Timely Delivery",
+    description: "Efficient logistics ensuring safe, reliable and on-time delivery of mineral products across India with seamless supply chain management",
   },
   {
     icon: Truck,
-    title: "Competitive Pricing",
-    description: "Best value for premium quality products with flexible payment terms",
+    title: "Competitive Pricing & Flexible Commercial Terms",
+    description: "Premium quality mineral products at competitive market prices, supported by flexible payment and commercial terms designed to provide greater value and support long-term business partnerships",
   },
   {
     icon: Check,
     title: "15+ Years Experience",
-    description: "Trusted expertise in mineral grinding and quality standards",
-  },
-  {
-    icon: HeartHandshake,
-    title: "Loyalty",
-    description: "Trusted expertise in mineral grinding and quality standards",
+    description: "A decade of mineral industry expertise, delivering premium quality mineral solutions backed by technical excellence, consistent quality and trusted customer partnerships",
   },
   {
     icon: BicepsFlexed,
-    title: "Professional Workers",
-    description: "Trusted expertise in mineral grinding and quality standards",
+    title: "Skilled & Experienced Team",
+    description: "Trained technical and production professionals focus on process precision, quality consistency and operational excellence at every stage",
   },
   {
     icon: Pickaxe,
     title: "Own Mines and Manufacturing",
-    description: "Trusted expertise in mineral grinding and quality standards",
+    description: "Own mines and advanced processing facility maintain complete control over raw materials, ensuring superior quality, consistent supply and cost-efficient production",
   },
 ];
 
@@ -76,7 +71,7 @@ export const WhyChooseUsSection = () => {
               Why Choose Us
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
-              At <span className="font-bold">Stonex Enterprises</span>, we combine decades of expertise with modern technology to deliver the finest mineral products that meet your exact specifications.
+              At <span className="font-bold">Stonex Enterprises</span>, we combine Mineral industry expertise with advanced technology to deliver premium mineral products tailored to your exact specifications.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6">

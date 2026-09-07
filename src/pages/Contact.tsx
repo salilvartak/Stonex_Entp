@@ -14,6 +14,7 @@ const Contact = () => {
     phone: "",
     company: "",
     product: "",
+    meshSize: "",
     message: "",
   });
 
@@ -23,7 +24,7 @@ const Contact = () => {
       title: "Message Sent!",
       description: "Thank you for your inquiry. We'll get back to you within 24 hours.",
     });
-    setFormData({ name: "", email: "", phone: "", company: "", product: "", message: "" });
+    setFormData({ name: "", email: "", phone: "", company: "", product: "", meshSize: "", message: "" });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -49,44 +50,48 @@ const Contact = () => {
         </section>
 
         {/* Quick Contact Info */}
-        <section className="py-12 bg-background">
+        <section className="py-16 bg-muted/40">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-3 gap-6">
               {/* Address */}
-              <div className="bg-card p-6 rounded-lg shadow-md flex items-start gap-4">
-                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center shrink-0">
-                  <MapPin className="h-6 w-6 text-accent" />
+              <div className="group relative bg-card p-6 pt-8 rounded-2xl shadow-md border border-border/50 flex items-start gap-4 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1.5 hover:border-accent/50">
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-accent to-primary" />
+                <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
+                  <MapPin className="h-6 w-6 text-accent group-hover:text-accent-foreground transition-colors duration-300" />
                 </div>
                 <div>
-                  <h3 className="font-heading font-semibold text-foreground mb-2">Address</h3>
-                  <p className="text-muted-foreground text-sm">
-                    Industrial Area, Nasirabad<br />
-                    Ajmer, Rajasthan 305601, India
+                  <h3 className="font-heading font-semibold text-lg text-foreground mb-2">Address</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Kotdi, Dariba, Teh: Railmagra,<br />
+                    Dist: Rajsamand, Rajasthan, Pin:313211, India
                   </p>
                 </div>
               </div>
 
               {/* Phone */}
-              <div className="bg-card p-6 rounded-lg shadow-md flex items-start gap-4">
-                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center shrink-0">
-                  <Phone className="h-6 w-6 text-accent" />
+              <div className="group relative bg-card p-6 pt-8 rounded-2xl shadow-md border border-border/50 flex items-start gap-4 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1.5 hover:border-accent/50">
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-accent to-primary" />
+                <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
+                  <Phone className="h-6 w-6 text-accent group-hover:text-accent-foreground transition-colors duration-300" />
                 </div>
-                <div>
-                  <h3 className="font-heading font-semibold text-foreground mb-2">Phone</h3>
-                  <a href="tel:+919876543210" className="text-accent hover:underline block">+91 98765 43210</a>
-                  <a href="tel:+919876543211" className="text-muted-foreground text-sm">+91 98765 43211</a>
+                <div className="space-y-1">
+                  <h3 className="font-heading font-semibold text-lg text-foreground mb-2">Phone</h3>
+                  <a href="tel:+919928157991" className="text-accent hover:underline block text-sm">+91 99281 57991</a>
+                  <a href="tel:+919929702991" className="text-accent hover:underline block text-sm">+91 99297 02991</a>
+                  <a href="tel:+918112290501" className="text-accent hover:underline block text-sm">+91 81122 90501</a>
                 </div>
               </div>
 
               {/* Email */}
-              <div className="bg-card p-6 rounded-lg shadow-md flex items-start gap-4">
-                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center shrink-0">
-                  <Mail className="h-6 w-6 text-accent" />
+              <div className="group relative bg-card p-6 pt-8 rounded-2xl shadow-md border border-border/50 flex items-start gap-4 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1.5 hover:border-accent/50">
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-accent to-primary" />
+                <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
+                  <Mail className="h-6 w-6 text-accent group-hover:text-accent-foreground transition-colors duration-300" />
                 </div>
-                <div>
-                  <h3 className="font-heading font-semibold text-foreground mb-2">Email</h3>
-                  <a href="mailto:info@stonexenterprises.com" className="text-accent hover:underline block text-sm">info@stonexenterprises.com</a>
-                  <a href="mailto:sales@stonexenterprises.com" className="text-muted-foreground text-sm">sales@stonexenterprises.com</a>
+                <div className="space-y-1 min-w-0">
+                  <h3 className="font-heading font-semibold text-lg text-foreground mb-2">Email</h3>
+                  <a href="mailto:info@stonexenterprises.com" className="text-accent hover:underline block text-sm break-all">Stonex.enterprises8801@gmail.com</a>
+                  <a href="mailto:sales@stonexenterprises.com" className="text-accent hover:underline block text-sm break-all">Dootanujkumar@gmail.com</a>
                 </div>
               </div>
             </div>
@@ -137,7 +142,7 @@ const Contact = () => {
                         value={formData.phone}
                         onChange={handleChange}
                         required
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 9928157991"
                       />
                     </div>
                   </div>
@@ -186,6 +191,16 @@ const Contact = () => {
                   </div>
                   
                   <div>
+                    <label className="block text-sm font-medium text-foreground mb-2">Mesh Size</label>
+                    <Input
+                      name="meshSize"
+                      value={formData.meshSize}
+                      onChange={handleChange}
+                      placeholder="e.g. 200 mesh, 325 mesh"
+                    />
+                  </div>
+
+                  <div>
                     <label className="block text-sm font-medium text-foreground mb-2">Message *</label>
                     <Textarea
                       name="message"
@@ -208,7 +223,7 @@ const Contact = () => {
               <div className="text-center mt-8">
                 <p className="text-muted-foreground mb-4">Or reach us directly on WhatsApp</p>
                 <a
-                  href="https://wa.me/919876543210"
+                  href="https://wa.me/9928157991"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-[hsl(142,70%,45%)] text-[hsl(0,0%,100%)] px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"

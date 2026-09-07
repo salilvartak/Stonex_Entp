@@ -1,55 +1,55 @@
-import { Palette, Pipette, CircleDot, GlassWater, Tractor, Building2, FileText, Pill } from "lucide-react";
+import { Palette, Pipette, CircleDot, GlassWater, Tractor, Building2, FileText, Beaker, Blend, Gem } from "lucide-react";
 
 const industries = [
   {
     icon: Palette,
-    name: "Paints & Coatings",
-    description: "Brightness, opacity & durability enhancement",
+    name: "Paint & Coating",
+    description: "Enhance brightness, whiteness, opacity, smoothness and coating durability",
   },
   {
     icon: Pipette,
-    name: "Plastics & Polymers",
-    description: "PVC, PE, PP filler for cost reduction",
+    name: "Plastic & Polymers",
+    description: "Improved stiffness, dimensional stability, smoother surface finish and cost effective efficiency",
   },
   {
-    icon: Palette,
-    name: "Slabs(Countertop)",
-    description: "High durability and aesthetic finish", // Added placeholder text for better UI, feel free to remove
-  },
-  {
-    icon: GlassWater,
-    name: "Glass",
-    description: "Stabilizer & flux for quality improvement",
+    icon: Gem,
+    name: "Quartz & Engineered Stone Slabs",
+    description: "Exceptional hardness, superior durability, scratch, heat and stain resistance, with an elegant aesthetic finish",
   },
   {
     icon: GlassWater,
-    name: "Ceramics",
-    description: "Stabilizer & flux for quality improvement",
+    name: "Glass & Ceramic",
+    description: "Enhance structural strength, thermal stability, durability, fluxing performance and consistent formulation performance",
+  },
+  {
+    icon: Beaker,
+    name: "Adhesive & Sealants",
+    description: "Deliver superior mechanical strength, optimized viscosity, enhanced stability, long-lasting durability and cost-effective",
   },
   {
     icon: CircleDot,
-    name: "Rubber Industry",
-    description: "Reinforcing filler for flexibility & durability",
+    name: "Rubber & Elastomer",
+    description: "Enhance reinforcement, tensile strength, tear resistance, resilience, and processing efficiency",
   },
   {
     icon: FileText,
-    name: "Paper Industry",
-    description: "Coating pigment for brightness & smoothness",
+    name: "Paper & Paperboard",
+    description: "Improve brightness, opacity, smoothness, print ability and surface quality",
   },
   {
     icon: Tractor,
-    name: "Agriculture",
-    description: "Soil conditioning & fertilizer enhancement",
+    name: "Agriculture & Animal Nutrition",
+    description: "Improve soil conditioning, elevate fertilizer performance and provide essential nutrients for plants and animals",
   },
   {
     icon: Building2,
-    name: "Construction",
-    description: "Building materials & cement additives",
+    name: "Construction & Building Materials",
+    description: "Support strength, durability, dimensional stability, particle packing and cost-effective formulations",
   },
   {
-    icon: Pill,
-    name: "Pharmaceuticals",
-    description: "High purity filler for medical applications",
+    icon: Blend,
+    name: "Masterbatch & Filler Compounds",
+    description: "Improve filler dispersion, melt processability, stiffness, dimensional stability, surface finish and cost efficiency",
   },
 ];
 
@@ -66,7 +66,7 @@ export const IndustriesSection = () => {
             Powering Diverse Industries
           </h2>
           <p className="text-muted-foreground text-lg">
-            <span className="font-bold">Stonex Enterprises</span> is a leading Manufacturer and Supplier of Premium Quality Minerals Filler and Extender. We deliver excellent quality products with the use of latest technology and timely delivering to them.
+            <span className="font-bold">Stonex Enterprises</span> is a leading Manufacturer and Supplier of Premium Quality Minerals Filler and Extender. We deliver excellent quality products with the use of advanced technology and timely delivering to them.
           </p>
         </div>
 

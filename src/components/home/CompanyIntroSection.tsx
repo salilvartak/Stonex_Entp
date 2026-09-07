@@ -8,14 +8,20 @@ export const CompanyIntroSection = () => {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="text-accent font-semibold uppercase tracking-wider text-sm mb-3 block">
+            <span className="text-accent font-semibold uppercase tracking-wider text-m mb-3 block">
               About Stonex Enterprises
             </span>
             <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mb-6">
               Manufacturing Excellence Since 2011
             </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+              <span className="font-bold">STONEX ENTERPRISES</span> is one of India's leading manufacturers and suppliers of premium quality mineral fillers and extenders. Our comprehensive product portfolio comprises high grade Quartz Powder, Quartz Grits, Calcite Powder, Dolomite Powder and Dolomite Grits, known for their high purity, consistent quality and excellent physico-mechanical properties, serving industries such as Slab & Countertop, Paints & Coatings, Plastics & Polymers (PVC Pipes, Cable), Rubber, Masterbatch Filler, Agriculture, Glass, Ceramics, Steel & Metallurgy and Construction.
+            </p>
+            <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+              We also manufacture Stearic Acid Coated Calcite and Dolomite Powders, specially surface treated to improve moisture resistance, dispersion and compatibility with polymer systems, alongside decorative Natural Pebbles for landscaping, architectural and other aesthetic applications.
+            </p>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              <span className="font-bold">STONEX ENTERPRISES</span> is India's leading Manufacturer and Supplier of Premium Quality Mineral Filler and Extender such as Quartz Powder, Quartz Grits, Calcite Powder, Dolomite Powder and Dolomite Grits, which are widely use in key industries such as Slab (Countertop), Paints, Plastic (Pipes ,PVC, Cables), Rubber, Detergents, Polymers, Agriculture, Glass, Ceramic, Pharmaceutical and Construction for their Excellent Physico-Mechanical Properties. We also manufacturing Coated Dolomite Powder and Coated Calcite Powder with Stearic acid coating for enhancing Minerals Properties (Moisture Resistance and Polymer Compatibility) and various type of Pebble’s.
+              At STONEX ENTERPRISES, our focus on quality, consistency, advanced processing and customer satisfaction enables us to deliver mineral solutions that meet the diverse technical requirements of modern industries.
             </p>
             <Button variant="outline" size="lg" asChild>
               <Link to="/about" className="gap-2">

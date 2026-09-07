@@ -36,11 +36,11 @@ export const Header = () => {
           <div className="flex items-center gap-6">
             <a href="tel:+919876543210" className="flex items-center gap-2 hover:text-accent transition-colors">
               <Phone className="h-4 w-4" />
-              <span>+91 98765 43210</span>
+              <span>+91 9928157991</span>
             </a>
-            <a href="mailto:info@stonexenterprises.com" className="flex items-center gap-2 hover:text-accent transition-colors">
+            <a href="mailto:stonex.enterprises8801@gmail.com" className="flex items-center gap-2 hover:text-accent transition-colors">
               <Mail className="h-4 w-4" />
-              <span>info@stonexenterprises.com</span>
+              <span>stonex.enterprises8801@gmail.com</span>
             </a>
           </div>
           <p className="text-primary-foreground/80">India's Trusted Mineral Manufacturer Since 2011</p>

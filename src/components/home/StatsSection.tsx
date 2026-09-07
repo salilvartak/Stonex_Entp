@@ -11,14 +11,14 @@ const stats = [
   },
   {
     icon: Weight,
-    value: 180000,
+    value: 230000,
     label: "Annual Production",
     suffix: " MT",
     isYear: false,
   },
   {
     icon: Users,
-    value: 20,
+    value: 60,
     label: "Happy Clients",
     suffix: "+",
     isYear: false,
@@ -32,7 +32,7 @@ const stats = [
   },
   {
     icon: Pickaxe,
-    value: 2,
+    value: 5,
     label: "Mines",
     suffix: "",
     isYear: false,
