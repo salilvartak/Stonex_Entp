@@ -19,11 +19,12 @@ import {
   Gem,
   Blend,
 } from "lucide-react";
+import quartzPowderImg from "@/assets/images/quartz-powder.jpeg";
 
 const product = {
   name: "Quartz Powder",
   purity: ">99.6% Purity >96% Brightness",
-  image: "https://i.ibb.co/JjBZkrPH/quartz-powder.jpg",
+  image: quartzPowderImg,
   description:
     "Manufactured from premium quality quartz, our High Purity Quartz Powder delivers excellent chemical stability, high whiteness, and precisely controlled particle size for consistent performance across demanding industrial applications. Its controlled mineral composition, uniform particle distribution, and superior physical properties make it a reliable functional filler and performance-enhancing mineral for a wide range of formulations.",
   whatIs:

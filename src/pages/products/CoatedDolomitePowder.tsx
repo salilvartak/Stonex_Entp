@@ -18,11 +18,12 @@ import {
   Blend,
   Waves,
 } from "lucide-react";
+import coatedDolomiteImg from "@/assets/images/Coated-dolomite.jpeg";
 
 const product = {
   name: "Coated Dolomite Powder",
   purity: ">98.5% Purity >96% Brightness",
-  image: "https://i.ibb.co/GfJ4gPQ0/Coated-dolomite.jpg",
+  image: coatedDolomiteImg,
   description:
     "Premium-grade Stearic Acid Coated Dolomite Powder is manufactured from high-purity Dolomite (CaMg(CO₃)₂) and engineered with a precisely controlled stearic acid surface treatment to deliver exceptional hydrophobicity, excellent filler–polymer compatibility, superior dispersion, reduced moisture absorption and enhanced processing efficiency for PVC, PE, PP, masterbatch, rubber, wire & cable and other high-performance industrial applications.",
   whatIs:

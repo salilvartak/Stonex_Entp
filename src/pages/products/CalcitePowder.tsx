@@ -18,11 +18,12 @@ import {
   Diamond,
   Blend,
 } from "lucide-react";
+import calcitePowderImg from "@/assets/images/calcite-powder.png";
 
 const product = {
   name: "Calcite Powder",
   purity: ">98.5% Purity >97% Briteness",
-  image: "https://i.ibb.co/pHbVhwp/calcite-powder.png",
+  image: calcitePowderImg,
   description:
     "Premium grade, high purity Calcite Powder (CaCO₃) is precisely processed to deliver high calcium carbonate purity, excellent brightness, superior whiteness and tightly controlled particle-size consistency. Its excellent physical and chemical properties support reliable processing, uniform dispersion and consistent performance, making it suitable for a wide range of demanding industrial applications.",
   whatIs:

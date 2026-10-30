@@ -60,7 +60,7 @@ const applicationsData: Record<string, {
     sections: [
       {
         title: "Paint & Coating Industry",
-        image: "https://i.ibb.co/0R77Jqfd/paint-coating.jpg",
+        image: paintCoatingImage,
         points: [
           { icon: Sun, title: "High Brightness & Exceptional Whiteness", description: "High-purity Calcium Carbonate (CaCO₃) with excellent brightness and natural whiteness provides superior light reflectance, enhancing brilliance, color purity, opacity, and uniformity in white and pastel coatings." },
           { icon: Layers, title: "Efficient TiO₂ Extension & Enhanced Opacity", description: "Ultra fine calcite optimizes TiO₂ particle spacing and distribution, improving light scattering, hiding power, tint strength and coverage efficiency while enabling optimized TiO₂ consumption and cost effective formulations." },

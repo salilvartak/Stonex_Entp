@@ -18,11 +18,12 @@ import {
   Diamond,
   Blend,
 } from "lucide-react";
+import dolomitePowderImg from "@/assets/images/dolomite-powder.jpeg";
 
 const product = {
   name: "Dolomite Powder",
   purity: ">98.5% Purity >96% Brightness",
-  image: "https://i.ibb.co/XfxJ9GLw/dolomite-powder.jpg",
+  image: dolomitePowderImg,
   description:
     "Premium grade, high purity Dolomite Powder (CaMg(CO₃)₂) is manufactured through controlled processing to provide a consistent calcium–magnesium carbonate composition, high brightness, excellent whiteness, and precisely controlled particle-size distribution. Its balanced chemical composition and refined physical characteristics promote uniform dispersion, stable processing, and consistent end-product performance, making it a dependable mineral filler and functional raw material for a broad range of high-performance industrial applications.",
   whatIs:

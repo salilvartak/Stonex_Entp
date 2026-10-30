@@ -59,7 +59,7 @@ export const IndustriesSection = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-accent font-semibold uppercase tracking-wider text-sm mb-3 block">
+          <span className="eyebrow text-accent font-semibold uppercase tracking-wider text-sm mb-3 block">
             Industries We Serve
           </span>
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mb-4">
@@ -78,7 +78,7 @@ export const IndustriesSection = () => {
             return (
               <div
                 key={industry.name}
-                className="bg-card p-6 rounded-lg text-center hover-lift group cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="industry-card bg-card p-6 rounded-lg text-center hover-lift group cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-accent/10 rounded-full mb-4 group-hover:bg-accent transition-colors duration-300">

@@ -5,11 +5,12 @@ import { Button } from "@/components/ui/button";
 import { CollapsibleSection } from "@/components/products/CollapsibleSection";
 import { PurityPills } from "@/components/products/PurityPills";
 import { ArrowRight, ArrowLeft, Package } from "lucide-react";
+import pebbleImg from "@/assets/images/pebble.png";
 
 const product = {
   name: "Pebble",
   purity: "96%+",
-  image: "https://i.ibb.co/vx7nXVZv/pebble.png",
+  image: pebbleImg,
   description: "Finest talc for pharmaceuticals, cosmetics and rubber",
   rawMaterial: "High-grade talc ore from Rajasthan deposits",
   productionCapacity: "500+ MT per month",

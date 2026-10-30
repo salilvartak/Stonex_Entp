@@ -59,14 +59,14 @@ export const WhyChooseUsSection = () => {
             </div>
             {/* Floating Stats Card */}
             <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 rounded-lg shadow-xl hidden md:block">
-              <div className="text-4xl font-heading font-bold mb-1">15+</div>
-              <div className="text-sm text-primary-foreground/80">Years of Excellence</div>
+              <div className="stat-number text-4xl font-heading font-bold mb-1">15+</div>
+              <div className="stat-label text-sm text-primary-foreground/80">Years of Excellence</div>
             </div>
           </div>
 
           {/* Content Side */}
           <div>
-            <span className="text-accent font-semibold uppercase tracking-wider text-sm mb-3 block"></span>
+            <span className="eyebrow text-accent font-semibold uppercase tracking-wider text-sm mb-3 block"></span>
             <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mb-6">
               Why Choose Us
             </h2>
@@ -78,7 +78,7 @@ export const WhyChooseUsSection = () => {
               {features.map((feature) => {
                 const Icon = feature.icon;
                 return (
-                  <div key={feature.title} className="flex gap-4">
+                  <div key={feature.title} className="feature-card flex gap-4">
                     <div className="shrink-0 w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
                       <Icon className="h-6 w-6 text-accent" />
                     </div>

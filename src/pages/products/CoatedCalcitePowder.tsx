@@ -18,11 +18,12 @@ import {
   Diamond,
   Waves,
 } from "lucide-react";
+import coatedCalciteImg from "@/assets/images/coated-calcite.jpeg";
 
 const product = {
   name: "Coated Calcite Powder",
   purity: ">97% Purity >96% Brightness",
-  image: "https://i.ibb.co/xTs0rBc/coated-calcite.jpg",
+  image: coatedCalciteImg,
   description:
     "Premium-grade Stearic Acid Coated Calcite Powder is manufactured from high-purity Calcite (CaCO₃) and precisely surface-treated to provide enhanced hydrophobicity, excellent polymer compatibility, superior dispersion and consistent performance across a wide range of plastic, PVC, masterbatch, rubber and industrial applications.",
   whatIs:

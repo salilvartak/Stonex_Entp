@@ -2,56 +2,64 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import calcitePowderImg from "@/assets/images/calcite-powder.png";
+import dolomitePowderImg from "@/assets/images/dolomite-powder.jpeg";
+import quartzPowderImg from "@/assets/images/quartz-powder.jpeg";
+import quartzGritsImg from "@/assets/images/quartz-grits.jpeg";
+import dolomiteGritsImg from "@/assets/images/dolomite-grits.jpeg";
+import coatedCalciteImg from "@/assets/images/coated-calcite.jpeg";
+import coatedDolomiteImg from "@/assets/images/Coated-dolomite.jpeg";
+import pebbleImg from "@/assets/images/pebble.png";
 
 const products = [
   {
     id: "calcite-powder",
     name: "Calcite Powder",
     purity: "98%+",
-    image: "https://i.ibb.co/pHbVhwp/calcite-powder.png",
+    image: calcitePowderImg,
   },
   {
     id: "dolomite-powder",
     name: "Dolomite Powder",
     purity: "97%+",
-    image: "https://i.ibb.co/XfxJ9GLw/dolomite-powder.jpg",
+    image: dolomitePowderImg,
   },
   {
     id: "quartz-powder",
     name: "Quartz Powder",
     purity: "99%+",
-    image: "https://i.ibb.co/JjBZkrPH/quartz-powder.jpg",
+    image: quartzPowderImg,
   },
   {
     id: "quartz-grits",
     name: "Quartz Grits",
     purity: "99%+",
-    image: "https://i.ibb.co/vxPXqNc9/quartz-grits.jpg",
+    image: quartzGritsImg,
   },
   
   {
     id: "dolomite-grits",
     name: "Dolomite Grits",
     purity: "98%+",
-    image: "https://i.ibb.co/Ym90GcQ/dolomite-grits.jpg",
+    image: dolomiteGritsImg,
   },
   {
     id: "coated-calcite",
     name: "Coated Calcite Powder",
     purity: "97%+",
-    image: "https://i.ibb.co/xTs0rBc/coated-calcite.jpg",
+    image: coatedCalciteImg,
   },
   {
     id: "coated-dolomite",
     name: "Coated Dolomite Powder",
     purity: "97%+",
-    image: "https://i.ibb.co/GfJ4gPQ0/Coated-dolomite.jpg",
+    image: coatedDolomiteImg,
   },
   {
     id: "pebble",
     name: "Pebble",
     purity: "97%+",
-    image: "https://i.ibb.co/vx7nXVZv/pebble.png",
+    image: pebbleImg,
   },
 ];
 

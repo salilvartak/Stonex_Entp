@@ -19,11 +19,12 @@ import {
   Gem,
   Blend,
 } from "lucide-react";
+import quartzGritsImg from "@/assets/images/quartz-grits.jpeg";
 
 const product = {
   name: "Quartz Grits",
   purity: ">99.6% Purity >96% Brightness",
-  image: "https://i.ibb.co/vxPXqNc9/quartz-grits.jpg",
+  image: quartzGritsImg,
   description:
     "Premium grade, high purity Quartz Grits (SiO₂) are precisely processed to deliver exceptional hardness, high silica purity, superior whiteness and tightly controlled particle size consistency. Their excellent physical and chemical properties ensure reliable processing, uniform performance and enhanced durability across a wide range of demanding industrial applications.",
   whatIs:

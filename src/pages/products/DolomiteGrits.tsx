@@ -16,11 +16,12 @@ import {
   Diamond,
   CloudDrizzle,
 } from "lucide-react";
+import dolomiteGritsImg from "@/assets/images/dolomite-grits.jpeg";
 
 const product = {
   name: "Dolomite Grits",
   purity: ">98.5% Purity >96% Brightness",
-  image: "https://i.ibb.co/Ym90GcQ/dolomite-grits.jpg",
+  image: dolomiteGritsImg,
   description:
     "Premium-grade, high-purity Dolomite Grits (CaMg(CO₃)₂) are processed to deliver hardness, high whiteness, consistent particle sizing, superior calcium–magnesium content and reliable chemical and thermal stability for demanding industrial applications.",
   whatIs:

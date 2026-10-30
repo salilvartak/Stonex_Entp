@@ -10,7 +10,7 @@ import { CTASection } from "@/components/home/CTASection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="home-typography min-h-screen">
       <Header />
       <main>
         {/* Hero Section - Manufacturing plant visual with positioning */}

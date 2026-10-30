@@ -1,69 +1,77 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, BadgeCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import calcitePowderImg from "@/assets/images/calcite-powder.png";
+import dolomitePowderImg from "@/assets/images/dolomite-powder.jpeg";
+import quartzPowderImg from "@/assets/images/quartz-powder.jpeg";
+import quartzGritsImg from "@/assets/images/quartz-grits.jpeg";
+import dolomiteGritsImg from "@/assets/images/dolomite-grits.jpeg";
+import coatedCalciteImg from "@/assets/images/coated-calcite.jpeg";
+import coatedDolomiteImg from "@/assets/images/Coated-dolomite.jpeg";
+import pebbleImg from "@/assets/images/pebble.png";
 
 const products = [
   {
     id: "calcite-powder",
     name: "Calcite Powder",
     purity: "98%+",
-    image: "https://i.ibb.co/pHbVhwp/calcite-powder.png",
+    image: calcitePowderImg,
   },
   {
     id: "dolomite-powder",
     name: "Dolomite Powder",
     purity: "97%+",
-    image: "https://i.ibb.co/XfxJ9GLw/dolomite-powder.jpg",
+    image: dolomitePowderImg,
   },
   {
     id: "quartz-powder",
     name: "Quartz Powder",
     purity: "99%+",
-    image: "https://i.ibb.co/JjBZkrPH/quartz-powder.jpg",
+    image: quartzPowderImg,
   },
   {
     id: "quartz-grits",
     name: "Quartz Grits",
     purity: "99%+",
-    image: "https://i.ibb.co/vxPXqNc9/quartz-grits.jpg",
+    image: quartzGritsImg,
   },
   {
     id: "dolomite-grits",
     name: "Dolomite Grits",
     purity: "98%+",
-    image: "https://i.ibb.co/Ym90GcQ/dolomite-grits.jpg",
+    image: dolomiteGritsImg,
   },
   {
     id: "coated-calcite",
     name: "Coated Calcite Powder",
     purity: "98%+",
-    image: "https://i.ibb.co/xTs0rBc/coated-calcite.jpg",
+    image: coatedCalciteImg,
   },
   {
     id: "coated-dolomite",
     name: "Coated Dolomite Powder",
     purity: "98%+",
-    image: "https://i.ibb.co/GfJ4gPQ0/Coated-dolomite.jpg",
+    image: coatedDolomiteImg,
   },
 
   
   
   {
-    id: "pebbles",
+    id: "pebble",
     name: "Pebbles",
     purity: "98%+",
-    image: "https://i.ibb.co/vx7nXVZv/pebble.png",
+    image: pebbleImg,
   },
 ];
 
 export const ProductsSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-slate-50">
+    <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-16 gap-6 text-center md:text-left">
           <div className="max-w-2xl">
-            <span className="text-accent font-bold uppercase tracking-widest text-xs mb-3 block">
+            <span className="eyebrow text-accent font-bold uppercase tracking-widest text-xs mb-3 block">
               Premium Collection
             </span>
             <h2 className="font-heading font-bold text-3xl md:text-5xl text-foreground">
@@ -71,7 +79,7 @@ export const ProductsSection = () => {
               <span className="text-primary/80">Mineral Fillers & Extenders</span>
             </h2>
           </div>
-          <Button variant="outline" className="hidden md:flex group border-accent text-accent hover:bg-accent hover:text-white" asChild>
+          <Button variant="outline" className="hidden md:flex group border-accent text-accent hover:bg-accent hover:text-primary" asChild>
             <Link to="/products">
               Explore Catalog
               <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -85,7 +93,7 @@ export const ProductsSection = () => {
             <Link
               key={product.id}
               to={`/products/${product.id}`}
-              className="group relative bg-white rounded-2xl overflow-hidden border border-border shadow-sm active:scale-[0.98] md:hover:shadow-2xl transition-all duration-500"
+              className="product-card group relative bg-white rounded-2xl overflow-hidden border border-border shadow-sm active:scale-[0.98] md:hover:shadow-2xl transition-all duration-500"
               style={{ animationDelay: `${index * 50}ms` }}
             >
               {/* Image Container */}
@@ -105,12 +113,12 @@ export const ProductsSection = () => {
                 <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 text-white md:translate-y-2 md:group-hover:translate-y-0 transition-transform">
                   <div className="flex items-center gap-2 mb-1">
                     <BadgeCheck className="h-4 w-4 text-accent" />
-                    <span className="text-[10px] uppercase tracking-widest text-white/80">Certified Quality</span>
+                    <span className="product-badge text-[10px] uppercase tracking-widest text-white/80">Certified Quality</span>
                   </div>
                   <h3 className="font-heading font-bold text-lg md:text-xl leading-tight">
                     {product.name}
                   </h3>
-                  <div className="mt-3 flex items-center text-accent text-sm font-bold md:opacity-0 md:group-hover:opacity-100 transition-opacity">
+                  <div className="view-specs mt-3 flex items-center text-accent text-sm font-bold md:opacity-0 md:group-hover:opacity-100 transition-opacity">
                     View Specs <ArrowRight className="ml-2 h-4 w-4" />
                   </div>
                 </div>

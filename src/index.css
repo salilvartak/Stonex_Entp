@@ -226,3 +226,249 @@
     transform: scale(1);
   }
 }
+/* ==========================================
+   STONEX ENTERPRISES - HOMEPAGE TYPOGRAPHY
+   Scoped to <main className="home-typography"> on the front page only.
+   Headings: Plus Jakarta Sans | Body/UI: Inter
+   ========================================== */
+
+.home-typography {
+  /* Doc palette: navy #0F293F, charcoal #2D2D2D, gold #D4AF37, off-white #F7F7F4 */
+  --background: 60 16% 96%;
+  --foreground: 207 61% 15%;
+  --primary: 207 61% 15%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 18%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 46 65% 52%;
+  --accent-foreground: 207 61% 15%;
+  --cta: 46 65% 52%;
+  --cta-foreground: 207 61% 15%;
+  --muted: 60 12% 92%;
+  --muted-foreground: 0 0% 18%;
+  --border: 60 10% 86%;
+  --ring: 207 61% 15%;
+
+  color: hsl(0 0% 18%);
+  background-color: hsl(var(--background));
+
+  --home-font-heading: "Plus Jakarta Sans", sans-serif;
+  --home-font-body: "Inter", sans-serif;
+
+  font-family: var(--home-font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.home-typography h1,
+.home-typography h2,
+.home-typography h3,
+.home-typography h4 {
+  font-family: var(--home-font-heading);
+}
+
+.home-typography p,
+.home-typography span,
+.home-typography a,
+.home-typography button {
+  font-family: var(--home-font-body);
+}
+
+.home-typography h1 {
+  font-size: 60px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1.8px;
+}
+
+.home-typography h2 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+}
+
+.home-typography h3 {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+}
+
+.home-typography .product-card h3 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.2px;
+}
+
+.home-typography .industry-card h3 {
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.home-typography .feature-card h4 {
+  font-family: var(--home-font-heading);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.home-typography p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.home-typography .product-card p,
+.home-typography .industry-card p,
+.home-typography .feature-card p {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* Hero description is 18px */
+.home-typography section:first-child p {
+  font-size: 18px;
+}
+
+/* Buttons (shadcn Button renders <a> when asChild) */
+.home-typography button,
+.home-typography a.inline-flex {
+  font-family: var(--home-font-body);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.2px;
+}
+
+.home-typography .eyebrow,
+.home-typography .product-badge {
+  font-family: var(--home-font-body);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.8px;
+}
+
+.home-typography .view-specs {
+  font-family: var(--home-font-body);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.home-typography .stat-number {
+  font-family: var(--home-font-heading);
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.home-typography .stat-label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Header (nav 15/500, contact 14/500) */
+.home-typography header a,
+.home-typography header button {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.home-typography header > div:first-child a,
+.home-typography header > div:first-child p {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Footer (h4 17/600, links 14/500, text 14/400, copyright 13/400) */
+.home-typography footer h4 {
+  font-family: var(--home-font-heading);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.home-typography footer p,
+.home-typography footer span,
+.home-typography footer a {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.home-typography footer p,
+.home-typography footer span {
+  font-weight: 400;
+}
+
+.home-typography footer a {
+  font-weight: 500;
+}
+
+.home-typography footer .footer-brand {
+  font-family: var(--home-font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.home-typography footer .footer-copyright {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .home-typography h1 {
+    font-size: 38px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+  }
+
+  .home-typography h2 {
+    font-size: 30px;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+  }
+
+  .home-typography h3 {
+    font-size: 23px;
+  }
+
+  .home-typography .product-card h3 {
+    font-size: 20px;
+  }
+
+  .home-typography .industry-card h3,
+  .home-typography .feature-card h4 {
+    font-size: 18px;
+  }
+
+  .home-typography .product-card p,
+  .home-typography .industry-card p,
+  .home-typography .feature-card p {
+    font-size: 14px;
+  }
+
+  .home-typography .stat-number {
+    font-size: 28px;
+  }
+
+  .home-typography .stat-label {
+    font-size: 13px;
+  }
+
+  .home-typography button,
+  .home-typography a.inline-flex {
+    font-size: 14px;
+  }
+}

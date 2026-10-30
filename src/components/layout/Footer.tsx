@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Facebook, Linkedin, Twitter } from "lucide-react";
+import logoImg from "@/assets/images/STONEX.png";
 
 export const Footer = () => {
   return (
@@ -11,10 +12,10 @@ export const Footer = () => {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-20  flex items-center justify-center">
-                <img src="https://i.ibb.co/PvKQSV65/STONEX-NEW-BLUE-1.png" alt="" />
+                <img src={logoImg} alt="" />
               </div>
               <div className="flex flex-col">
-                <span className="font-heading font-bold text-xl">Stonex</span>
+                <span className="footer-brand font-heading font-bold text-xl">Stonex</span>
                 <span className="text-xs text-primary-foreground/70 uppercase tracking-wider">Enterprises</span>
               </div>
             </div>
@@ -60,11 +61,11 @@ export const Footer = () => {
                 { name: "Dolomite Powder", id: "dolomite-powder" },
                 { name: "Quartz Powder", id: "quartz-powder" },
                 { name: "Quartz Gritz", id: "quartz-grits" },
-                { name: "Dolomite Gritz", id: "dolomite-gritz"},
-                { name: "Coated Dolomite Powder", id: "coted-dolomite"},
+                { name: "Dolomite Gritz", id: "dolomite-grits"},
+                { name: "Coated Dolomite Powder", id: "coated-dolomite"},
                 
                 { name: "Coated Calcite Powder", id: "coated-calcite" },
-                { name: "Pebbles", id: "coated-calcite" },
+                { name: "Pebbles", id: "pebble" },
               ].map((product) => (
                 <li key={product.id}>
                   <Link to={`/products/${product.id}`} className="text-primary-foreground/80 hover:text-accent transition-colors">
@@ -125,7 +126,7 @@ export const Footer = () => {
       <div className="border-t border-primary-foreground/10">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-primary-foreground/60 text-sm">
+            <p className="footer-copyright text-primary-foreground/60 text-sm">
               © {new Date().getFullYear()} Stonex Enterprises. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">

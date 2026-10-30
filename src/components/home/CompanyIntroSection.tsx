@@ -8,7 +8,7 @@ export const CompanyIntroSection = () => {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="text-accent font-semibold uppercase tracking-wider text-m mb-3 block">
+            <span className="eyebrow text-accent font-semibold uppercase tracking-wider text-m mb-3 block">
               About Stonex Enterprises
             </span>
             <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mb-6">

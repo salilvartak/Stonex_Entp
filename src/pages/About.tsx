@@ -11,6 +11,7 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
+import founderImg from "@/assets/images/Founder.jpeg";
 
 const facilityImages = [
   { src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop", alt: "Manufacturing Plant" },
@@ -176,7 +177,7 @@ const About = () => {
                   the tall rectangle perfectly without distorting.
               */}
               <img
-                src="https://i.ibb.co/1JXrYjVZ/Founder.jpg"
+                src={founderImg}
                 alt="Mr. Rajesh Doot"
                 className="w-full h-full object-cover"
               />

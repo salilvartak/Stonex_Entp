@@ -117,10 +117,10 @@ const StatItem = ({ stat, isVisible, delay }: { stat: typeof stats[0]; isVisible
       <div className="inline-flex items-center justify-center w-16 h-16 bg-accent/20 rounded-full mb-4">
         <Icon className="h-8 w-8 text-accent" />
       </div>
-      <div className="font-heading font-bold text-3xl md:text-4xl text-primary-foreground mb-2">
+      <div className="stat-number font-heading font-bold text-3xl md:text-4xl text-primary-foreground mb-2">
         {stat.isYear ? count : count.toLocaleString()}{stat.suffix}
       </div>
-      <p className="text-primary-foreground/70">{stat.label}</p>
+      <p className="stat-label text-primary-foreground/70">{stat.label}</p>
     </div>
   );
 };
