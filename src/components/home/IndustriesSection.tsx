@@ -1,53 +1,51 @@
-import { Palette, Pipette, CircleDot, GlassWater, Tractor, Building2, FileText, Beaker, Blend, Gem } from "lucide-react";
-
 const industries = [
   {
-    icon: Palette,
+    icon: "/Icon%20Images/Paint.png",
     name: "Paint & Coating",
     description: "Enhance brightness, whiteness, opacity, smoothness and coating durability",
   },
   {
-    icon: Pipette,
+    icon: "/Icon%20Images/Plastic.png",
     name: "Plastic & Polymers",
     description: "Improved stiffness, dimensional stability, smoother surface finish and cost effective efficiency",
   },
   {
-    icon: Gem,
+    icon: "/Icon%20Images/Slab.png",
     name: "Quartz & Engineered Stone Slabs",
     description: "Exceptional hardness, superior durability, scratch, heat and stain resistance, with an elegant aesthetic finish",
   },
   {
-    icon: GlassWater,
+    icon: "/Icon%20Images/Glass.png",
     name: "Glass & Ceramic",
     description: "Enhance structural strength, thermal stability, durability, fluxing performance and consistent formulation performance",
   },
   {
-    icon: Beaker,
+    icon: "/Icon%20Images/Adhesive.png",
     name: "Adhesive & Sealants",
     description: "Deliver superior mechanical strength, optimized viscosity, enhanced stability, long-lasting durability and cost-effective",
   },
   {
-    icon: CircleDot,
+    icon: "/Icon%20Images/Rubber.png",
     name: "Rubber & Elastomer",
     description: "Enhance reinforcement, tensile strength, tear resistance, resilience, and processing efficiency",
   },
   {
-    icon: FileText,
+    icon: "/Icon%20Images/Paper.png",
     name: "Paper & Paperboard",
     description: "Improve brightness, opacity, smoothness, print ability and surface quality",
   },
   {
-    icon: Tractor,
+    icon: "/Icon%20Images/Agriculture.png",
     name: "Agriculture & Animal Nutrition",
     description: "Improve soil conditioning, elevate fertilizer performance and provide essential nutrients for plants and animals",
   },
   {
-    icon: Building2,
+    icon: "/Icon%20Images/Construction.png",
     name: "Construction & Building Materials",
     description: "Support strength, durability, dimensional stability, particle packing and cost-effective formulations",
   },
   {
-    icon: Blend,
+    icon: "/Icon%20Images/Masterbatch.png",
     name: "Masterbatch & Filler Compounds",
     description: "Improve filler dispersion, melt processability, stiffness, dimensional stability, surface finish and cost efficiency",
   },
@@ -74,16 +72,18 @@ export const IndustriesSection = () => {
         {/* The magic class here is: [&>*:nth-child(9)]:lg:col-start-2 */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 [&>*:nth-child(9)]:lg:col-start-2">
           {industries.map((industry, index) => {
-            const Icon = industry.icon;
             return (
               <div
                 key={industry.name}
                 className="industry-card bg-card p-6 rounded-lg text-center hover-lift group cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-accent/10 rounded-full mb-4 group-hover:bg-accent transition-colors duration-300">
-                  <Icon className="h-8 w-8 text-accent group-hover:text-accent-foreground transition-colors duration-300" />
-                </div>
+                <img
+                  src={industry.icon}
+                  alt={industry.name}
+                  loading="lazy"
+                  className="w-24 h-24 object-contain mx-auto mb-4 transition-transform duration-300 group-hover:scale-110"
+                />
                 <h3 className="font-heading font-semibold text-foreground mb-2">
                   {industry.name}
                 </h3>
