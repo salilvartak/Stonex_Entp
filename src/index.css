@@ -472,3 +472,148 @@
     font-size: 14px;
   }
 }
+
+/* ==========================================
+   STONEX ENTERPRISES - ABOUT US TYPOGRAPHY
+   Applied with .home-typography (palette, fonts, header, footer) on the
+   About page wrapper. Rules below are About-specific refinements.
+   ========================================== */
+
+.about-page {
+  --about-muted: #626B73;
+  --about-text-hero: 60px;
+  --about-text-h2: 40px;
+  --about-text-h3: 26px;
+  --about-text-stat: 34px;
+  --about-text-stat-label: 14px;
+  --about-text-hero-description: 18px;
+}
+
+.about-page .about-welcome-title {
+  font-family: var(--home-font-heading);
+  font-size: var(--about-text-hero);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1.8px;
+  color: #fff; /* sits on the navy hero gradient */
+  text-wrap: balance;
+}
+
+.about-page .hero-description {
+  max-width: 720px;
+  font-size: var(--about-text-hero-description);
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.about-page .about-section-title {
+  font-family: var(--home-font-heading);
+  font-size: var(--about-text-h2);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+  color: #0F293F;
+  text-wrap: balance;
+}
+
+.about-page .about-subtitle {
+  font-family: var(--home-font-heading);
+  font-size: var(--about-text-h3);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+  color: #0F293F;
+}
+
+.about-page .about-paragraph {
+  margin-bottom: 18px;
+  font-family: var(--home-font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2D2D2D;
+}
+
+.about-page .founder-name {
+  font-family: var(--home-font-heading);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0;
+  color: #0F293F;
+}
+
+.about-page .founder-role {
+  font-family: var(--home-font-body);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--about-muted);
+}
+
+.about-page .equipment-category-title,
+.about-page .value-title {
+  font-family: var(--home-font-heading);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0;
+  color: #0F293F;
+}
+
+.about-page .equipment-list,
+.about-page .value-description {
+  font-family: var(--home-font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2D2D2D;
+}
+
+.about-page .stat-number {
+  font-family: var(--home-font-heading);
+  font-size: var(--about-text-stat);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  font-variant-numeric: tabular-nums;
+  color: #fff; /* stats band is navy */
+}
+
+.about-page .stat-label {
+  font-family: var(--home-font-body);
+  font-size: var(--about-text-stat-label);
+  font-weight: 500;
+  line-height: 1.5;
+  color: rgb(255 255 255 / 0.75);
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    --about-text-hero: 38px;
+    --about-text-h2: 30px;
+    --about-text-h3: 23px;
+    --about-text-stat: 28px;
+    --about-text-stat-label: 13px;
+    --about-text-hero-description: 16px;
+  }
+
+  .about-page .about-welcome-title {
+    letter-spacing: -1px;
+  }
+
+  .about-page .about-section-title {
+    letter-spacing: -0.5px;
+  }
+
+  .about-page .eyebrow {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-page {
+    --about-text-hero: 34px;
+    --about-text-h2: 28px;
+  }
+}

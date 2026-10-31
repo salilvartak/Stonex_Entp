@@ -117,17 +117,17 @@ const machinery = [
 
 const About = () => {
   return (
-    <div className="min-h-screen">
+    <div className="about-page home-typography min-h-screen">
       <Header />
       <main>
         {/* Hero Section - Welcome Message */}
         <section className="pt-40 pb-20 bg-gradient-to-br from-primary to-secondary">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl">
-              <h1 className="font-heading font-bold text-4xl md:text-5xl text-primary-foreground mb-6">
+              <h1 className="about-welcome-title font-heading font-bold text-4xl md:text-5xl text-primary-foreground mb-6">
                 Welcome to Stonex Enterprises
               </h1>
-              <p className="text-xl text-primary-foreground/90">
+              <p className="hero-description text-xl text-primary-foreground/90">
                 India's leading manufacturer of premium mineral Fillers & Extenders with over 15 years of expertise
               </p>
             </div>
@@ -138,16 +138,16 @@ const About = () => {
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <span className="text-accent font-semibold uppercase tracking-wider text-sm mb-3 block">Company Overview</span>
-              <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
+              <span className="eyebrow text-accent font-semibold uppercase tracking-wider text-sm mb-3 block">Company Overview</span>
+              <h2 className="about-section-title font-heading font-bold text-3xl text-foreground mb-6">
                 Pioneering Quality Since 2011
               </h2>
               <div className="prose prose-lg text-muted-foreground">
-                <p className="mb-4">
+                <p className="about-paragraph mb-4">
                   Empowering Diverse Industries with High Performance Mineral Solutions: Since 2011, we have been delivering high quality, performance driven mineral solutions to a wide range of industries. We are one of Rajasthan’s leading manufacturers and suppliers of premium mineral fillers and extenders, offering a comprehensive portfolio of Quartz Powder & Grits, Calcite Powder, Dolomite Powder & Grits, Coated Calcite Powder and Coated Dolomite Powder.
 
                 </p>
-                <p className="mb-4">
+                <p className="about-paragraph mb-4">
                  Our products are trusted across diverse industrial sectors and manufacturing applications. With a strong focus on quality, consistency, advanced processing and reliable supply, we provide mineral solutions engineered to enhance product performance, optimize manufacturing efficiency and support consistent end product quality, while building long term value and complete customer satisfaction.
 
 
@@ -192,16 +192,16 @@ const About = () => {
 
           {/* Right Column - Content */}
           <div>
-            <span className="text-accent font-semibold uppercase tracking-wider text-sm mb-3 block">
+            <span className="eyebrow text-accent font-semibold uppercase tracking-wider text-sm mb-3 block">
               Our Founder
             </span>
-            <h2 className="font-heading font-bold text-3xl text-foreground mb-4">
+            <h2 className="founder-name font-heading font-bold text-3xl text-foreground mb-1">
               Mr. Rajesh Doot
             </h2>
-            <p className="text-lg text-muted-foreground mb-4">
+            <p className="founder-role text-lg text-muted-foreground mb-4">
               Founder & Managing Director
             </p>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="about-paragraph text-muted-foreground leading-relaxed">
               Founded in 2011 by Mr. Rajesh Doot, our company is backed by over 15 years of expertise in mineral mining, grinding, processing and quality management. Under his leadership, we have established multiple strategically located manufacturing facilities across Rajasthan, with a strong commitment to delivering high quality, consistent and reliable mineral products that meet the evolving requirements of diverse industries. Our state-of-the-art manufacturing facilities are equipped with advanced processing and material handling technologies, including Ball Mills, Micronizers, VSI Machines, 28 Roller Mills with Classifier Systems, Automatic Grits Colour Sorting Machines, Advanced Crushed Stone Sorting Machines, Magnetic Separation Systems, Powder Coating Machines and Pebble Processing Units. These capabilities enable us to achieve precise particle sizing, efficient processing, consistent quality and reliable product performance across our diverse mineral product range. Supported by a team of skilled, disciplined and highly motivated professionals, we continuously focus on technological advancement, operational efficiency, stringent quality management and customer satisfaction. Today with an impressive production capacity of 23,0000+ MT per annum, we proudly serve customers across Indian markets, delivering quality, reliability, consistency and value with every product we supply.
             </p>
           </div>
@@ -217,8 +217,8 @@ const About = () => {
                 <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mb-6">
                   <Award className="h-7 w-7 text-accent" />
                 </div>
-                <h3 className="font-heading font-bold text-2xl text-foreground mb-4">Our Vision</h3>
-                <p className="text-muted-foreground">
+                <h3 className="about-subtitle font-heading font-bold text-2xl text-foreground mb-4">Our Vision</h3>
+                <p className="about-paragraph text-muted-foreground">
                   To be a trusted leader in India’s industrial mineral industry, setting new benchmarks in quality, consistency, innovation, and sustainable mineral processing while creating long-term value for our customers, people, and communities.
                 </p>
               </div>
@@ -226,8 +226,8 @@ const About = () => {
                 <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mb-6">
                   <Cog className="h-7 w-7 text-accent" />
                 </div>
-                <h3 className="font-heading font-bold text-2xl text-foreground mb-4">Our Mission</h3>
-                <p className="text-muted-foreground">
+                <h3 className="about-subtitle font-heading font-bold text-2xl text-foreground mb-4">Our Mission</h3>
+                <p className="about-paragraph text-muted-foreground">
                  To deliver high-quality, precisely processed industrial minerals through advanced technology, strict quality control, reliable supply, technical expertise, and customer-focused solutions, while creating long-term value through consistent performance.
                 </p>
               </div>
@@ -239,23 +239,23 @@ const About = () => {
         <section className="py-20 bg-muted">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-2xl mx-auto mb-12">
-              <span className="text-accent font-semibold uppercase tracking-wider text-sm mb-3 block">Our Equipment</span>
-              <h2 className="font-heading font-bold text-3xl text-foreground mb-4">State-of-the-Art Machinery</h2>
-              <p className="text-muted-foreground">
+              <span className="eyebrow text-accent font-semibold uppercase tracking-wider text-sm mb-3 block">Our Equipment</span>
+              <h2 className="about-section-title font-heading font-bold text-3xl text-foreground mb-4">State-of-the-Art Machinery</h2>
+              <p className="about-paragraph text-muted-foreground">
                 We leverage advanced indigenous and globally sourced machinery to deliver superior quality and consistency.
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               {machinery.map((group) => (
                 <div key={group.category} className="bg-card p-6 rounded-lg shadow-md">
-                  <h4 className="font-heading font-bold text-lg text-foreground mb-4 pb-4 border-b border-border">
+                  <h4 className="equipment-category-title font-heading font-bold text-lg text-foreground mb-4 pb-4 border-b border-border">
                     {group.category}
                   </h4>
                   <ul className="space-y-3">
                     {group.items.map((item) => (
                       <li key={item} className="flex items-center gap-3">
                         <div className="w-2 h-2 bg-accent rounded-full" />
-                        <span className="text-muted-foreground">{item}</span>
+                        <span className="equipment-list text-muted-foreground">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -270,22 +270,22 @@ const About = () => {
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
-                <div className="font-heading font-bold text-4xl md:text-5xl text-primary-foreground mb-2">
+                <div className="stat-number font-heading font-bold text-4xl md:text-5xl text-primary-foreground mb-2">
                 230,000+ MT
                 </div>
-                <p className="text-primary-foreground/70">Annual Production</p>
+                <p className="stat-label text-primary-foreground/70">Annual Production</p>
               </div>
               <div>
-                <div className="font-heading font-bold text-4xl md:text-5xl text-primary-foreground mb-2">
+                <div className="stat-number font-heading font-bold text-4xl md:text-5xl text-primary-foreground mb-2">
                   8
                 </div>
-                <p className="text-primary-foreground/70">Plants</p>
+                <p className="stat-label text-primary-foreground/70">Plants</p>
               </div>
               <div>
-                <div className="font-heading font-bold text-4xl md:text-5xl text-primary-foreground mb-2">
+                <div className="stat-number font-heading font-bold text-4xl md:text-5xl text-primary-foreground mb-2">
                   5
                 </div>
-                <p className="text-primary-foreground/70">Mines</p>
+                <p className="stat-label text-primary-foreground/70">Mines</p>
               </div>
             </div>
           </div>
@@ -295,8 +295,8 @@ const About = () => {
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-2xl mx-auto mb-12">
-              <h2 className="font-heading font-bold text-3xl text-foreground mb-4">Our Facilities</h2>
-              <p className="text-muted-foreground">
+              <h2 className="about-section-title font-heading font-bold text-3xl text-foreground mb-4">Our Facilities</h2>
+              <p className="about-paragraph text-muted-foreground">
                 Explore a visual journey through our advanced plants and efficient mining operations.
               </p>
             </div>
@@ -309,13 +309,13 @@ const About = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-accent font-semibold uppercase tracking-wider text-sm mb-3 block">
+          <span className="eyebrow text-accent font-semibold uppercase tracking-wider text-sm mb-3 block">
             Our DNA
           </span>
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mb-4">
+          <h2 className="about-section-title font-heading font-bold text-3xl md:text-4xl text-foreground mb-4">
             Our Core Values
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="about-paragraph text-muted-foreground text-lg">
             The core principles that shape our values, inspire our actions and define our commitment to you.
           </p>
         </div>
@@ -336,10 +336,10 @@ const About = () => {
                 <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
                   <Icon className="h-7 w-7 text-accent group-hover:text-accent-foreground transition-colors duration-300" />
                 </div>
-                <h4 className="font-heading font-bold text-xl text-foreground mb-3 group-hover:text-accent transition-colors duration-300">
+                <h4 className="value-title font-heading font-bold text-xl text-foreground mb-3 group-hover:text-accent transition-colors duration-300">
                   {value.title}
                 </h4>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="value-description text-muted-foreground leading-relaxed">
                   {value.description}
                 </p>
               </div>
