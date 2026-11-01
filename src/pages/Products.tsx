@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import "@/styles/product-page.css";
 import calcitePowderImg from "@/assets/images/calcite-powder.png";
 import dolomitePowderImg from "@/assets/images/dolomite-powder.jpeg";
 import quartzPowderImg from "@/assets/images/quartz-powder.jpeg";
@@ -67,56 +68,54 @@ const Products = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main>
-        {/* Hero Section */}
-        <section className="pt-40 pb-16 bg-gradient-to-br from-primary to-secondary">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl">
-              <h1 className="font-heading font-bold text-4xl md:text-5xl text-primary-foreground mb-6">
-                Our Products
-              </h1>
-              <p className="text-xl text-primary-foreground/90">
-                Premium quality mineral industrial   fillers and extenders for diverse industrial applications
-              </p>
-            </div>
+      <main className="product-page pt-24 md:pt-36">
+        <div className="product-container">
+          <nav className="product-breadcrumbs" aria-label="Breadcrumb">
+            <Link to="/">Home</Link>
+            <span>/</span>
+            <span className="breadcrumb-current">Products</span>
+          </nav>
+        </div>
+
+        <section className="product-hero">
+          <div className="product-container">
+            <span className="product-eyebrow">Mineral Fillers &amp; Extenders</span>
+            <h1>Our Products</h1>
+            <p className="product-hero-description">
+              Premium quality mineral industrial fillers and extenders for diverse industrial applications
+            </p>
           </div>
         </section>
 
-        {/* Products Grid - Index Only */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <section className="product-section product-section-alt">
+          <div className="product-container">
+            <div className="product-list-grid">
               {products.map((product) => (
-                <Link
-                  key={product.id}
-                  to={`/products/${product.id}`}
-                  className="group bg-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover-lift"
-                >
-                  {/* Product Image */}
-                  <div className="relative aspect-square overflow-hidden">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <span className="text-primary-foreground font-semibold flex items-center gap-2">
-                        View Details
-                        <ArrowRight className="h-4 w-4" />
-                      </span>
-                    </div>
-                    
+                <Link key={product.id} to={`/products/${product.id}`} className="product-list-card">
+                  <div className="product-list-image">
+                    <img src={product.image} alt={product.name} loading="lazy" />
                   </div>
-                  
-                  {/* Product Name */}
-                  <div className="p-4 text-center">
-                    <h3 className="font-heading font-bold text-foreground group-hover:text-accent transition-colors">
-                      {product.name}
-                    </h3>
+                  <div className="product-list-body">
+                    <h3>{product.name}</h3>
+                    <span className="product-list-link">
+                      View Details <ArrowRight size={16} />
+                    </span>
                   </div>
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="product-cta">
+          <div className="product-container product-cta-inner">
+            <div>
+              <h2>Need a specific grade or size?</h2>
+              <p>Talk to our team for specifications, samples and pricing tailored to your requirements.</p>
+            </div>
+            <Link to="/contact" className="stonex-button stonex-button-primary">
+              Get a Quote
+            </Link>
           </div>
         </section>
       </main>

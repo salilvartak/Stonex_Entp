@@ -11,9 +11,10 @@ const productLinks = [
   { name: "Dolomite Powder", slug: "dolomite-powder" },
   { name: "Quartz Powder", slug: "quartz-powder" },
   { name: "Quartz Grits", slug: "quartz-grits" },
+  { name: "Dolomite Grits", slug: "dolomite-grits" },
+  { name: "Coated Calcite Powder", slug: "coated-calcite" },
+  { name: "Coated Dolomite Powder", slug: "coated-dolomite" },
   { name: "Pebbles", slug: "pebble" },
-  { name: "Coated Calcite", slug: "coated-calcite" },
-  { name: "Coated Dolomite", slug: "coated-dolomite" },
 ];
 
 export const Header = () => {

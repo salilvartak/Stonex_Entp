@@ -1,14 +1,6 @@
-import { Link } from "react-router-dom";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { Button } from "@/components/ui/button";
-import { PurityPills } from "@/components/products/PurityPills";
+import { ProductPageLayout } from "@/components/products/ProductPageLayout";
 import {
-  ArrowRight,
-  ArrowLeft,
-  Beaker,
   Layers,
-  Factory,
   Package,
   ShieldCheck,
   FlaskConical,
@@ -109,270 +101,58 @@ const manufacturingSteps = [
 
 const DolomiteGrits = () => {
   return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        {/* Breadcrumb */}
-        <section className="pt-40 pb-4 bg-muted">
-          <div className="container mx-auto px-4">
-            <div className="flex items-center gap-2 text-sm">
-              <Link to="/" className="text-muted-foreground hover:text-foreground">Home</Link>
-              <span className="text-muted-foreground">/</span>
-              <Link to="/products" className="text-muted-foreground hover:text-foreground">Products</Link>
-              <span className="text-muted-foreground">/</span>
-              <span className="text-foreground font-medium">{product.name}</span>
-            </div>
+    <ProductPageLayout
+      name={product.name}
+      slug="dolomite-grits"
+      image={product.image}
+      description={product.description}
+      purity={product.purity}
+      whatIsTitle={"What is Dolomite and Dolomite Grits?"}
+      whatIs={product.whatIs}
+      how={product.how}
+      specs={[
+        { label: "Purity (CaMg(CO₃)₂)", value: ">98.5%" },
+        { label: "Brightness", value: ">96%" },
+        { label: "Whiteness", value: "95 - 97%" },
+        { label: "Calcium Carbonate (CaCO₃)", value: "50 - 55%" },
+        { label: "Magnesium Carbonate (MgCO₃)", value: "40 - 44%" },
+        { label: "Silica (SiO₂)", value: "<1.0%" },
+        { label: "Moisture Content", value: "<0.2%" },
+        { label: "Oil Absorption", value: "20 - 25 g/100g" },
+        { label: "pH Value", value: "8.5 - 9.5" },
+        { label: "Mohs Hardness", value: "3.5 - 4" },
+        { label: "Specific Gravity", value: "2.85 - 2.90" },
+      ]}
+      capacity="4000+ MT Per Month"
+      packaging={["25 Kg PP Bags", "50 Kg PP Bags", "1 MT Jumbo Bags"]}
+      keyPropertiesTitle={"Premium Dolomite Grits Key Properties"}
+      keyProperties={keyProperties}
+      processTitle={"How We Manufacture Premium Dolomite Grits"}
+      steps={manufacturingSteps}
+    >
+      <section className="product-section">
+        <div className="product-container">
+          <div className="product-section-heading">
+            <span className="product-section-kicker">Size Range</span>
+            <h2>Explore Our Premium Dolomite Grits Size Range</h2>
           </div>
-        </section>
-
-        {/* Product Hero - Image + Name */}
-        <section className="py-12 bg-muted">
-          <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="relative">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="rounded-lg shadow-xl w-full"
-                />
-                <PurityPills purity={product.purity} />
-              </div>
-              <div>
-                <h1 className="font-heading font-bold text-4xl md:text-5xl text-foreground mb-4">
-                  {product.name}
-                </h1>
-                <p className="text-xl text-muted-foreground leading-snug mb-6">{product.description}</p>
-                <Button variant="cta" size="lg" asChild>
-                  <Link to="/contact" className="gap-2">
-                    Enquire Now
-                    <ArrowRight className="h-5 w-5" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* How We Manufacture + Technical Specification Card */}
-        <section className="py-12 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-8 items-start">
-              <div className="bg-primary p-6 rounded-lg shadow-md h-full">
-                <p className="text-primary-foreground text-lg leading-relaxed">
-                  {product.how.split(/(STONEX ENTERPRISES)/).map((chunk, i) =>
-                    chunk === "STONEX ENTERPRISES" ? <strong key={i}>{chunk}</strong> : chunk
-                  )}
-                </p>
-              </div>
-
-              <div className="bg-card rounded-2xl shadow-xl border border-border/50 overflow-hidden">
-                <div className="bg-gradient-to-r from-primary to-secondary px-6 py-5 flex items-center gap-3">
-                  <div className="w-11 h-11 bg-white/15 rounded-xl flex items-center justify-center shrink-0">
-                    <Beaker className="h-6 w-6 text-primary-foreground" />
-                  </div>
-                  <h3 className="font-heading font-bold text-xl text-primary-foreground">
-                    Technical Specifications
-                  </h3>
-                </div>
-
-                <div className="p-6">
-                  <div className="grid grid-cols-2 gap-x-6 gap-y-4">
-                    {[
-                      { label: "Purity (CaMg(CO₃)₂)", value: ">98.5%" },
-                      { label: "Brightness", value: ">96%" },
-                      { label: "Whiteness", value: "95 - 97%" },
-                      { label: "Calcium Carbonate (CaCO₃)", value: "50 - 55%" },
-                      { label: "Magnesium Carbonate (MgCO₃)", value: "40 - 44%" },
-                      { label: "Silica (SiO₂)", value: "<1.0%" },
-                      { label: "Moisture Content", value: "<0.2%" },
-                      { label: "Oil Absorption", value: "20 - 25 g/100g" },
-                      { label: "pH Value", value: "8.5 - 9.5" },
-                      { label: "Mohs Hardness", value: "3.5 - 4" },
-                      { label: "Specific Gravity", value: "2.85 - 2.90" },
-                    ].map((spec) => (
-                      <div key={spec.label} className="flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
-                        <div>
-                          <div className="text-xs text-muted-foreground uppercase tracking-wide">{spec.label}</div>
-                          <div className="font-heading font-semibold text-foreground">{spec.value}</div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="h-px bg-border my-6" />
-
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
-                      <Factory className="h-5 w-5 text-accent" />
-                    </div>
-                    <div>
-                      <div className="text-xs text-muted-foreground uppercase tracking-wide">Production Capacity</div>
-                      <div className="font-heading font-semibold text-foreground">4000+ MT Per Month</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
-                      <Package className="h-5 w-5 text-accent" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-xs text-muted-foreground uppercase tracking-wide mb-2">Packaging Options</div>
-                      <div className="flex flex-wrap gap-2">
-                        {["25 Kg PP Bags", "50 Kg PP Bags", "1 MT Jumbo Bags"].map((pack) => (
-                          <span key={pack} className="bg-accent/10 text-accent text-sm px-3 py-1 rounded-full font-medium">
-                            {pack}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+          <div className="product-size-groups">
+            {sizeGroups.map((group) => (
+              <div key={group.label} className="product-process-card">
+                <h3>{group.label}</h3>
+                <div className="product-size-list">
+                  {group.sizes.map((size) => (
+                    <span key={size} className="product-size-chip">
+                      {size}
+                    </span>
+                  ))}
                 </div>
               </div>
-            </div>
+            ))}
           </div>
-        </section>
-
-        {/* What Is Section */}
-        <section className="py-12 bg-background">
-          <div className="container mx-auto px-4">
-            <h2 className="font-heading font-bold text-2xl text-foreground mb-4">
-              What is Dolomite and Dolomite Grits?
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed">{product.whatIs}</p>
-          </div>
-        </section>
-
-        {/* Size Range */}
-        <section className="py-14 bg-muted">
-          <div className="container mx-auto px-4">
-            <div className="text-center max-w-2xl mx-auto mb-10">
-              <h2 className="font-heading font-bold text-3xl text-foreground mb-4">
-                Explore Our Premium Dolomite Grits Size Range
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {sizeGroups.map((group) => (
-                <div key={group.label} className="bg-card rounded-2xl shadow-xl border border-border/50 overflow-hidden">
-                  <div className="bg-gradient-to-r from-primary to-secondary px-6 py-4">
-                    <h3 className="font-heading font-semibold text-primary-foreground">{group.label}</h3>
-                  </div>
-                  <div className="p-6 flex flex-wrap gap-2">
-                    {group.sizes.map((size) => (
-                      <span key={size} className="bg-accent/10 text-accent text-sm px-3 py-1.5 rounded-full font-medium">
-                        {size}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Key Properties */}
-        <section className="py-14 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="text-center max-w-2xl mx-auto mb-8">
-              <h2 className="font-heading font-bold text-3xl text-foreground mb-4">
-                Premium Dolomite Grits Key Properties
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-2 gap-5">
-              {keyProperties.map((prop, index) => {
-                const Icon = prop.icon;
-                const isLastOdd = index === keyProperties.length - 1 && keyProperties.length % 2 === 1;
-                return (
-                  <div
-                    key={prop.title}
-                    className={`bg-card p-4 rounded-xl shadow-md border border-border/50 flex gap-3 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 ${isLastOdd ? "md:col-span-2 md:max-w-[calc(50%-0.625rem)] md:mx-auto" : ""}`}
-                  >
-                    <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
-                      <Icon className="h-5 w-5 text-accent" />
-                    </div>
-                    <div>
-                      <h3 className="font-heading font-semibold text-foreground mb-1 text-sm">{prop.title}</h3>
-                      <p className="text-muted-foreground text-xs leading-snug">{prop.description}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* Manufacturing Process */}
-        <section className="py-14 bg-muted">
-          <div className="container mx-auto px-4">
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <h2 className="font-heading font-bold text-3xl text-foreground mb-4">
-                How We Manufacture Premium Dolomite Grits
-              </h2>
-            </div>
-            <div className="relative max-w-3xl mx-auto">
-              <div className="absolute left-5 top-2 bottom-2 w-px bg-border hidden sm:block" />
-              <div className="space-y-8">
-                {manufacturingSteps.map((step, index) => (
-                  <div key={step.title} className="relative flex gap-5">
-                    <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground font-heading font-bold flex items-center justify-center shrink-0 z-10">
-                      {index + 1}
-                    </div>
-                    <div className="bg-card p-5 rounded-xl shadow-md border border-border/50 flex-1">
-                      <h3 className="font-heading font-semibold text-foreground mb-2">{step.title}</h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Industry Applications Button Section */}
-        <section className="py-16 bg-background border-t border-border">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="font-heading font-bold text-2xl text-foreground mb-4">
-              Industry Applications
-            </h2>
-            <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-              Discover the diverse range of industries and specialized use cases where our {product.name} excels.
-            </p>
-
-            <Button size="lg" className="group" asChild>
-              <Link to="/products/dolomite-grits/applications">
-                View Applications
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-16 bg-primary">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="font-heading font-bold text-2xl text-primary-foreground mb-6">
-              Interested in {product.name}?
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="cta" size="lg" asChild>
-                <Link to="/contact" className="gap-2">
-                  Get a Quote
-                  <ArrowRight className="h-5 w-5" />
-                </Link>
-              </Button>
-              <Button variant="heroOutline" size="lg" asChild>
-                <Link to="/products" className="gap-2">
-                  <ArrowLeft className="h-5 w-5" />
-                  View All Products
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+        </div>
+      </section>
+    </ProductPageLayout>
   );
 };
 
