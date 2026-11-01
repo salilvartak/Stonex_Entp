@@ -674,7 +674,7 @@ footer .footer-copyright {
 @layer base {
   p {
     text-align: justify;
-    hyphens: auto;
+    hyphens: none;
   }
 
   .text-center p,
