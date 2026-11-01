@@ -10,7 +10,7 @@ import {
   Diamond,
   Blend,
 } from "lucide-react";
-import dolomitePowderImg from "@/assets/images/dolomite-powder.jpeg";
+import dolomitePowderImg from "@/assets/New Images/Dolomite Powder.jpg";
 
 const product = {
   name: "Dolomite Powder",

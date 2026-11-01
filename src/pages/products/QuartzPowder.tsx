@@ -10,7 +10,7 @@ import {
   Gem,
   Blend,
 } from "lucide-react";
-import quartzPowderImg from "@/assets/images/quartz-powder.jpeg";
+import quartzPowderImg from "@/assets/New Images/Quartz Powder.jpg";
 
 const product = {
   name: "Quartz Powder",

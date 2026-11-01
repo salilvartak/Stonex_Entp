@@ -9,7 +9,7 @@ import {
   Waves,
   Blend,
 } from "lucide-react";
-import coatedDolomiteImg from "@/assets/images/Coated-dolomite.jpeg";
+import coatedDolomiteImg from "@/assets/New Images/Coated Dolomite Powder.jpg";
 
 const product = {
   name: "Coated Dolomite Powder",

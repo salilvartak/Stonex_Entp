@@ -8,7 +8,7 @@ import {
   Diamond,
   CloudDrizzle,
 } from "lucide-react";
-import dolomiteGritsImg from "@/assets/images/dolomite-grits.jpeg";
+import dolomiteGritsImg from "@/assets/New Images/Dolomite Grits.jpg";
 
 const product = {
   name: "Dolomite Grits",

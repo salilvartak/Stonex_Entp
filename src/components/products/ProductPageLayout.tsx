@@ -2,7 +2,7 @@ import type { ElementType, ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Beaker, Factory, Layers, Package } from "lucide-react";
 import "@/styles/product-page.css";
 
 export interface ProductSpec {
@@ -26,8 +26,8 @@ interface ProductPageLayoutProps {
   slug: string;
   image: string;
   description: string;
-  /** e.g. ">98.5% Purity >97% Brightness" - split into hero badges */
-  purity: string;
+  /** Legacy badge text, no longer shown in the hero */
+  purity?: string;
   eyebrow?: string;
   /** Three quick facts under the hero. Defaults to first two specs + capacity. */
   highlights?: ProductSpec[];
@@ -61,7 +61,6 @@ export const ProductPageLayout = ({
   slug,
   image,
   description,
-  purity,
   eyebrow = "Premium Mineral Filler",
   highlights,
   whatIsTitle,
@@ -78,9 +77,6 @@ export const ProductPageLayout = ({
   processTitle,
   steps,
 }: ProductPageLayoutProps) => {
-  const parts = purity.split(/(?=>)/).filter(Boolean).map((p) => p.trim());
-  const badges = parts.length > 1 ? parts : [`${parts[0]} Pure`];
-
   const facts =
     highlights ??
     [
@@ -109,14 +105,7 @@ export const ProductPageLayout = ({
               <span className="product-eyebrow">{eyebrow}</span>
               <h1>{name}</h1>
               <p className="product-hero-description">{description}</p>
-              <div className="product-badges">
-                {badges.map((badge) => (
-                  <span key={badge} className="product-badge">
-                    {badge}
-                  </span>
-                ))}
-              </div>
-              <div className="product-actions">
+              <div className="product-actions" style={{ marginTop: 28 }}>
                 <Link to="/contact" className="stonex-button stonex-button-primary">
                   Enquire Now
                 </Link>
@@ -147,81 +136,97 @@ export const ProductPageLayout = ({
           </section>
         )}
 
-        {/* Intro */}
+        {/* How we manufacture + technical specifications */}
         <section className="product-section product-section-alt">
-          <div className="product-container product-intro-grid">
-            <div className="product-intro-copy">
-              <span className="product-section-kicker">About the Product</span>
-              <h2>{whatIsTitle}</h2>
-              <p>{whatIs}</p>
-            </div>
-            <aside className="product-intro-note">
-              <h3>Manufactured by Stonex Enterprises</h3>
+          <div className="product-container product-overview-grid">
+            <div className="product-how-card">
               <p>
                 <Bold text={how} term="STONEX ENTERPRISES" />
               </p>
-            </aside>
+            </div>
+
+            <div className="product-spec-card">
+              <div className="product-spec-card-header">
+                <span className="product-spec-card-icon">
+                  <Beaker size={22} />
+                </span>
+                <h3>Technical Specifications</h3>
+              </div>
+              <div className="product-spec-card-body">
+                {specs.length > 0 && (
+                  <div className="product-spec-grid">
+                    {specs.map((spec) => (
+                      <div key={spec.label} className="product-spec-item">
+                        <span className="product-spec-dot" />
+                        <div>
+                          <div className="product-spec-label">{spec.label}</div>
+                          <div className="product-spec-value">{spec.value}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {capacity && (
+                  <div className="product-spec-row">
+                    <span className="product-spec-row-icon">
+                      <Factory size={20} />
+                    </span>
+                    <div>
+                      <div className="product-spec-label">Production Capacity</div>
+                      <div className="product-spec-value">{capacity}</div>
+                    </div>
+                  </div>
+                )}
+
+                {sizes && sizes.length > 0 && (
+                  <div className="product-spec-row">
+                    <span className="product-spec-row-icon">
+                      <Layers size={20} />
+                    </span>
+                    <div>
+                      <div className="product-spec-label">Available Particle Sizes</div>
+                      <div className="product-size-list" style={{ margin: "8px 0" }}>
+                        {sizes.map((size) => (
+                          <span key={size} className="product-size-chip">
+                            {size}
+                          </span>
+                        ))}
+                      </div>
+                      {sizeNote && <div className="product-spec-note">{sizeNote}</div>}
+                    </div>
+                  </div>
+                )}
+
+                {packaging && packaging.length > 0 && (
+                  <div className="product-spec-row">
+                    <span className="product-spec-row-icon">
+                      <Package size={20} />
+                    </span>
+                    <div>
+                      <div className="product-spec-label">Packaging Options</div>
+                      <div className="product-packaging-list" style={{ marginTop: 8 }}>
+                        {packaging.map((pack) => (
+                          <span key={pack} className="product-packaging-chip">
+                            {pack}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Technical specifications */}
-        {(specs.length > 0 || capacity || sizes?.length || packaging?.length) && (
-          <section className="product-section">
-            <div className="product-container">
-              <div className="product-section-heading">
-                <span className="product-section-kicker">Technical Data</span>
-                <h2>Technical Specifications</h2>
-              </div>
-              <div className="product-specs-wrap">
-                <table className="product-specs">
-                  <tbody>
-                    {specs.map((spec) => (
-                      <tr key={spec.label}>
-                        <th scope="row">{spec.label}</th>
-                        <td>{spec.value}</td>
-                      </tr>
-                    ))}
-                    {capacity && (
-                      <tr>
-                        <th scope="row">Production Capacity</th>
-                        <td>{capacity}</td>
-                      </tr>
-                    )}
-                    {sizes && sizes.length > 0 && (
-                      <tr>
-                        <th scope="row">Available Particle Sizes</th>
-                        <td>
-                          <div className="product-size-list">
-                            {sizes.map((size) => (
-                              <span key={size} className="product-size-chip">
-                                {size}
-                              </span>
-                            ))}
-                          </div>
-                          {sizeNote && <div style={{ marginTop: 10 }}>{sizeNote}</div>}
-                        </td>
-                      </tr>
-                    )}
-                    {packaging && packaging.length > 0 && (
-                      <tr>
-                        <th scope="row">Packaging Options</th>
-                        <td>
-                          <div className="product-packaging-list">
-                            {packaging.map((pack) => (
-                              <span key={pack} className="product-packaging-chip">
-                                {pack}
-                              </span>
-                            ))}
-                          </div>
-                        </td>
-                      </tr>
-                    )}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </section>
-        )}
+        {/* What is */}
+        <section className="product-section">
+          <div className="product-container">
+            <h2>{whatIsTitle}</h2>
+            <p className="product-whatis">{whatIs}</p>
+          </div>
+        </section>
 
         {children}
 

@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, BadgeCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import calcitePowderImg from "@/assets/images/calcite-powder.png";
-import dolomitePowderImg from "@/assets/images/dolomite-powder.jpeg";
-import quartzPowderImg from "@/assets/images/quartz-powder.jpeg";
-import quartzGritsImg from "@/assets/images/quartz-grits.jpeg";
-import dolomiteGritsImg from "@/assets/images/dolomite-grits.jpeg";
-import coatedCalciteImg from "@/assets/images/coated-calcite.jpeg";
-import coatedDolomiteImg from "@/assets/images/Coated-dolomite.jpeg";
+import calcitePowderImg from "@/assets/New Images/Calcite powder.jpg";
+import dolomitePowderImg from "@/assets/New Images/Dolomite Powder.jpg";
+import quartzPowderImg from "@/assets/New Images/Quartz Powder.jpg";
+import quartzGritsImg from "@/assets/New Images/Quartz Grits.jpg";
+import dolomiteGritsImg from "@/assets/New Images/Dolomite Grits.jpg";
+import coatedCalciteImg from "@/assets/New Images/Coated Calcite powder.jpg";
+import coatedDolomiteImg from "@/assets/New Images/Coated Dolomite Powder.jpg";
 import pebbleImg from "@/assets/images/pebble.png";
 
 const products = [

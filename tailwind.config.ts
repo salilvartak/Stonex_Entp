@@ -63,8 +63,8 @@ export default {
 			}
 		},
 		fontFamily: {
-			sans: ['Open Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-			heading: ['Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+			sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+			heading: ['Plus Jakarta Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
 		},
   		borderRadius: {
   			lg: 'var(--radius)',
@@ -104,7 +104,7 @@ export default {
   		},
   		fontFamily: {
   			sans: [
-  				'DM Sans',
+  				'Inter',
   				'ui-sans-serif',
   				'system-ui',
   				'-apple-system',

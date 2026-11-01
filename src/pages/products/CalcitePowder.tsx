@@ -9,7 +9,7 @@ import {
   Diamond,
   Blend,
 } from "lucide-react";
-import calcitePowderImg from "@/assets/images/calcite-powder.png";
+import calcitePowderImg from "@/assets/New Images/Calcite powder.jpg";
 
 const product = {
   name: "Calcite Powder",

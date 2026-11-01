@@ -9,7 +9,7 @@ import {
   Diamond,
   Waves,
 } from "lucide-react";
-import coatedCalciteImg from "@/assets/images/coated-calcite.jpeg";
+import coatedCalciteImg from "@/assets/New Images/Coated Calcite powder.jpg";
 
 const product = {
   name: "Coated Calcite Powder",
