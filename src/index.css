@@ -668,22 +668,6 @@ footer .footer-copyright {
     font-size: 17px;
   }
 }
-
-/* Justified paragraphs. In the base layer so Tailwind alignment utilities
-   (text-center, text-left, ...) still win on the paragraph itself. */
-@layer base {
-  p {
-    text-align: justify;
-    hyphens: none;
-  }
-
-  .text-center p,
-  .text-right p,
-  .text-left p {
-    text-align: inherit;
-  }
-}
-
 /* Footer accent = brand gold #D4AF37 (icons, hovers) on every page */
 footer {
   --accent: 46 65% 52%;

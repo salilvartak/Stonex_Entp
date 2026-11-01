@@ -198,10 +198,6 @@
   .product-page .product-list-body h3 { font-size: 16px; }
 }
 
-/* Justified paragraphs, except centred headings blocks */
-.product-page p { text-align: justify; hyphens: none; }
-.product-page .product-section-heading p,
-.product-page .product-highlight p { text-align: center; }
 
 /* Product detail hero image: bordered, rounded */
 .product-page .product-hero-visual img {
