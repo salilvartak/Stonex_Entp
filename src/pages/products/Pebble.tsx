@@ -1,5 +1,5 @@
 import { ProductPageLayout } from "@/components/products/ProductPageLayout";
-import pebbleImg from "@/assets/images/pebble.png";
+import pebbleImg from "@/assets/New Images/Pebbles.jpeg";
 
 const product = {
   name: "Pebble",

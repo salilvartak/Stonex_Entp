@@ -8,7 +8,7 @@ import quartzGritsImg from "@/assets/New Images/Quartz Grits.jpg";
 import dolomiteGritsImg from "@/assets/New Images/Dolomite Grits.jpg";
 import coatedCalciteImg from "@/assets/New Images/Coated Calcite powder.jpg";
 import coatedDolomiteImg from "@/assets/New Images/Coated Dolomite Powder.jpg";
-import pebbleImg from "@/assets/images/pebble.png";
+import pebbleImg from "@/assets/New Images/Pebbles.jpeg";
 
 const products = [
   {
