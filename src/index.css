@@ -724,7 +724,7 @@ footer a.rounded-full:hover {
 
 .stacked-carousel__stage {
   --card-w: clamp(180px, 38cqw, 300px);
-  --card-h: calc(var(--card-w) * 4 / 3);
+  --card-h: calc(var(--card-w) * 3 / 2);
   position: relative;
   height: calc(var(--card-h) + 24px);
   perspective: 1200px;
@@ -756,22 +756,6 @@ footer a.rounded-full:hover {
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-.stacked-carousel__caption {
-  position: absolute;
-  inset: auto 0 0 0;
-  padding: 48px 16px 18px;
-  background: linear-gradient(to top, rgba(15, 41, 63, 0.9), rgba(15, 41, 63, 0));
-  color: #fff;
-  font-weight: 700;
-  font-size: 18px;
-  text-align: center;
-  transition: opacity 0.5s ease;
-}
-
-.stacked-carousel__card[data-active="false"] .stacked-carousel__caption {
-  opacity: 0;
 }
 
 .stacked-carousel__dots {

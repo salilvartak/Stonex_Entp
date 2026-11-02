@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 /*
  * Every image in src/assets/about-carousel/ becomes a card, in filename order.
  * Name files "<number>-<Caption>.webp", e.g. "5-Rubber.webp": the number sets
- * the order and the rest of the name is shown as the card's caption.
+ * the order and the rest of the name is used as the image's alt text.
  */
 const modules = import.meta.glob<string>(
   "@/assets/about-carousel/*.{webp,jpg,jpeg,png}",
@@ -92,9 +92,6 @@ export const StackedCarousel = () => {
               }}
             >
               <img src={slide.src} alt={slide.caption} loading="lazy" draggable={false} />
-              {slide.caption && (
-                <figcaption className="stacked-carousel__caption">{slide.caption}</figcaption>
-              )}
             </figure>
           );
         })}
