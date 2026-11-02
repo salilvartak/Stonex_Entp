@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, BadgeCheck } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import calcitePowderImg from "@/assets/New Images/Calcite powder.jpg";
 import dolomitePowderImg from "@/assets/New Images/Dolomite Powder.jpg";
@@ -14,52 +14,49 @@ const products = [
   {
     id: "calcite-powder",
     name: "Calcite Powder",
-    purity: "98%+",
+    features: [">98.5% Purity", ">97% Brightness"],
     image: calcitePowderImg,
   },
   {
     id: "dolomite-powder",
     name: "Dolomite Powder",
-    purity: "97%+",
+    features: [">98.5% Purity", ">96% Brightness"],
     image: dolomitePowderImg,
   },
   {
     id: "quartz-powder",
     name: "Quartz Powder",
-    purity: "99%+",
+    features: [">99% Purity", "High Brightness"],
     image: quartzPowderImg,
   },
   {
     id: "quartz-grits",
     name: "Quartz Grits",
-    purity: "99%+",
+    features: ["High Hardness", "Consistent Grading"],
     image: quartzGritsImg,
   },
   {
     id: "dolomite-grits",
     name: "Dolomite Grits",
-    purity: "98%+",
+    features: ["Natural Durability", "Uniform Grading"],
     image: dolomiteGritsImg,
   },
   {
+    id: "coated-dolomite",
+    name: "Stearic Acid Coated Dolomite Powder",
+    features: ["Low Oil Absorption", "Enhanced Hydrophobicity"],
+    image: coatedDolomiteImg,
+  },
+  {
     id: "coated-calcite",
-    name: "Coated Calcite Powder",
-    purity: "98%+",
+    name: "Stearic Acid Coated Calcite Powder",
+    features: ["Low Oil Absorption", "Improved Dispersion"],
     image: coatedCalciteImg,
   },
   {
-    id: "coated-dolomite",
-    name: "Coated Dolomite Powder",
-    purity: "98%+",
-    image: coatedDolomiteImg,
-  },
-
-  
-  
-  {
     id: "pebble",
-    name: "Pebbles",
-    purity: "98%+",
+    name: "Natural Pebbles",
+    features: ["Natural Beauty", "Multiple Sizes"],
     image: pebbleImg,
   },
 ];
@@ -93,35 +90,38 @@ export const ProductsSection = () => {
             <Link
               key={product.id}
               to={`/products/${product.id}`}
-              className="product-card group relative bg-white rounded-2xl overflow-hidden border border-border shadow-sm active:scale-[0.98] md:hover:shadow-2xl transition-all duration-500"
+              className="product-card group"
               style={{ animationDelay: `${index * 50}ms` }}
             >
-              {/* Image Container */}
-              <div className="relative aspect-[16/10] sm:aspect-[4/5] overflow-hidden">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-110"
-                />
-                {/* Gradient Overlay - more visible on mobile for legibility */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-70 md:opacity-60 md:group-hover:opacity-80 transition-opacity" />
-                
-                {/* Purity Badge */}
-                
+              <img src={product.image} alt={product.name} className="product-card__img" loading="lazy" />
 
-                {/* Content Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 text-white md:translate-y-2 md:group-hover:translate-y-0 transition-transform">
-                  <div className="flex items-center gap-2 mb-1">
-                    <BadgeCheck className="h-4 w-4 text-accent" />
-                    <span className="product-badge text-[10px] uppercase tracking-widest text-white/80">Certified Quality</span>
-                  </div>
-                  <h3 className="font-heading font-bold text-lg md:text-xl leading-tight">
-                    {product.name}
-                  </h3>
-                  <div className="view-specs mt-3 flex items-center text-accent text-sm font-bold md:opacity-0 md:group-hover:opacity-100 transition-opacity">
-                    View Specs <ArrowRight className="ml-2 h-4 w-4" />
-                  </div>
-                </div>
+              {/* Corner badge that pops in on hover */}
+              <span className="product-card__corner" aria-hidden="true">
+                <ArrowUpRight className="h-4 w-4" />
+              </span>
+
+              {/* Resting state: name + round arrow over the image */}
+              <div className="product-card__footer" aria-hidden="true">
+                <span className="product-card__footer-title">{product.name}</span>
+                <span className="product-card__footer-btn">
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+              </div>
+
+              {/* Hover state: frosted panel slides up with the details */}
+              <div className="product-card__panel">
+                <h3>{product.name}</h3>
+                <ul className="product-card__features">
+                  {product.features.map((feature) => (
+                    <li key={feature}>
+                      <Check className="h-4 w-4" aria-hidden="true" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <span className="view-specs product-card__link">
+                  View Specs <ArrowRight className="h-4 w-4" />
+                </span>
               </div>
             </Link>
           ))}
