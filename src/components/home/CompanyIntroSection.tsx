@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { StackedCarousel } from "./StackedCarousel";
 
 export const CompanyIntroSection = () => {
   return (
@@ -31,11 +32,7 @@ export const CompanyIntroSection = () => {
             </Button>
           </div>
           <div className="relative">
-            <img
-              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop"
-              alt="Stonex manufacturing facility"
-              className="rounded-lg shadow-xl w-full"
-            />
+            <StackedCarousel />
           </div>
         </div>
       </div>

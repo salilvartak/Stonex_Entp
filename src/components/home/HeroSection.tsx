@@ -1,18 +1,49 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { MapPin, ArrowRight } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import { useEffect, useState } from "react";
+
+/*
+ * Every image placed in src/assets/hero/ is picked up automatically and
+ * shown in filename order (plant-1, plant-2, ...). To add a slide, just drop
+ * a new file (e.g. plant-6.webp) into that folder.
+ */
+const heroModules = import.meta.glob<string>(
+  "@/assets/hero/*.{webp,jpg,jpeg,png}",
+  { eager: true, import: "default" }
+);
+const heroSlides = Object.keys(heroModules)
+  .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+  .map((key) => heroModules[key]);
+
+const SLIDE_DURATION_MS = 6000;
 
 export const HeroSection = () => {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    if (heroSlides.length < 2) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = window.setInterval(
+      () => setActive((i) => (i + 1) % heroSlides.length),
+      SLIDE_DURATION_MS
+    );
+    return () => window.clearInterval(id);
+  }, []);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      >
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary">
+      {/* Background Slideshow */}
+      <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+        {heroSlides.map((src, i) => (
+          <div
+            key={src}
+            className={`hero-slide ${i === active ? "is-active" : ""}`}
+            style={{ backgroundImage: `url(${src})` }}
+          />
+        ))}
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/40" />
       </div>
 
       {/* Content */}
@@ -45,6 +76,24 @@ export const HeroSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Slide Indicators */}
+      {heroSlides.length > 1 && (
+        <div className="absolute bottom-24 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+          {heroSlides.map((src, i) => (
+            <button
+              key={src}
+              type="button"
+              aria-label={`Show plant photo ${i + 1}`}
+              aria-current={i === active}
+              onClick={() => setActive(i)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                i === active ? "w-8 bg-accent" : "w-2 bg-primary-foreground/50 hover:bg-primary-foreground/80"
+              }`}
+            />
+          ))}
+        </div>
+      )}
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
