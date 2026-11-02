@@ -84,7 +84,7 @@ export const StackedCarousel = () => {
               aria-hidden={offset !== 0}
               onClick={() => offset !== 0 && go(offset)}
               style={{
-                transform: `translateX(${offset * 52}%) scale(${1 - abs * 0.15}) rotateY(${offset * -12}deg)`,
+                transform: `translateX(${offset * 46}%) scale(${1 - abs * 0.15}) rotateY(${offset * -12}deg)`,
                 zIndex: 10 - abs,
                 opacity: visible ? 1 : 0,
                 filter: abs === 0 ? "none" : `brightness(${1 - abs * 0.2})`,
