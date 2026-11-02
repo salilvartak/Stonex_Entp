@@ -12,6 +12,9 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import founderImg from "@/assets/images/founder.webp";
+import machineryBg from "@/assets/images/machinery-bg.webp";
+import { EquipmentFlipCard } from "@/components/about/EquipmentFlipCard";
+import { Layers } from "lucide-react";
 
 const facilityImages = [
   { src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop", alt: "Manufacturing Plant" },
@@ -110,9 +113,9 @@ const coreValues = [
 ];
 
 const machinery = [
-  { category: "Grinding Mills & Quantity", items: ["Ball Mills (10)","Micronizer (2)","28 Roller with Classifier (2)","VSI Grinding Unit (3)"] },
-  { category: "Processing Equipment", items: [ "Crushed Stone Sorting Machine", "Automatic Grits Colour Shorter Machine","Magnetic Separator Machine","Advanced Heating Unit","Advanced Washing Unit","Pebbles Processing Unit"] },
-  { category: "Coating Equipment", items: ["Automatic Powder Coating Machines", "Surface Treatment Units"] },
+  { icon: Cog, category: "Grinding Mills & Quantity", items: ["Ball Mills (10)","Micronizer (2)","28 Roller with Classifier (2)","VSI Grinding Unit (3)"] },
+  { icon: Factory, category: "Processing Equipment", items: [ "Crushed Stone Sorting Machine", "Automatic Grits Colour Sorter Machine","Magnetic Separator Machine","Advanced Heating Unit","Advanced Washing Unit","Pebbles Processing Unit"] },
+  { icon: Layers, category: "Coating Equipment", items: ["Automatic Powder Coating Machines", "Surface Treatment Units"] },
 ];
 
 const About = () => {
@@ -221,31 +224,27 @@ const About = () => {
           </div>
         </section>
 
-        {/* Machinery Section */}
-        <section className="py-20 bg-muted">
+        {/* Machinery Section — plant photo behind, flip cards on top */}
+        <section className="machinery-section relative isolate overflow-hidden py-20 md:py-24">
+          <img
+            src={machineryBg}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            className="absolute inset-0 -z-20 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0F293F]/90 via-[#0F293F]/80 to-[#0F293F]/92" />
           <div className="container mx-auto px-4">
             <div className="text-center max-w-2xl mx-auto mb-12">
               <span className="eyebrow text-accent font-semibold uppercase tracking-wider text-sm mb-3 block">Our Equipment</span>
-              <h2 className="about-section-title font-heading font-bold text-3xl text-foreground mb-4">State-of-the-Art Machinery</h2>
-              <p className="about-paragraph text-muted-foreground">
+              <h2 className="about-section-title font-heading font-bold text-3xl mb-4">State-of-the-Art Machinery</h2>
+              <p className="about-paragraph">
                 We leverage advanced indigenous and globally sourced machinery to deliver superior quality and consistency.
               </p>
             </div>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-6 md:gap-8">
               {machinery.map((group) => (
-                <div key={group.category} className="bg-card p-6 rounded-lg shadow-md">
-                  <h4 className="equipment-category-title font-heading font-bold text-lg text-foreground mb-4 pb-4 border-b border-border">
-                    {group.category}
-                  </h4>
-                  <ul className="space-y-3">
-                    {group.items.map((item) => (
-                      <li key={item} className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-accent rounded-full" />
-                        <span className="equipment-list text-muted-foreground">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <EquipmentFlipCard key={group.category} icon={group.icon} category={group.category} items={group.items} />
               ))}
             </div>
           </div>
