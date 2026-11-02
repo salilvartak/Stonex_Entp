@@ -677,3 +677,33 @@ footer {
 footer a.rounded-full:hover {
   color: #0F293F;
 }
+
+/* =========================================
+   HOME HERO SLIDESHOW
+   ========================================= */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 1.2s ease-in-out, transform 7.2s ease-out;
+  will-change: opacity, transform;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+  transform: scale(1.07);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide {
+    transition: none;
+  }
+
+  .hero-slide.is-active {
+    transform: none;
+  }
+}
