@@ -711,19 +711,23 @@ footer a.rounded-full:hover {
 /* =========================================
    HOME ABOUT — STACKED 3D CAROUSEL
    ========================================= */
+/* Card size follows the carousel's own width (not the viewport) so the
+   outermost cards always stay inside its column. The outer edge of the
+   stack reaches ~1.27 card widths from centre, so 38cqw keeps it within 50%. */
 .stacked-carousel {
-  --card-w: clamp(200px, 22vw, 300px);
-  --card-h: calc(var(--card-w) * 4 / 3);
+  container-type: inline-size;
   position: relative;
+  overflow: hidden;
   padding-bottom: 36px;
   user-select: none;
 }
 
 .stacked-carousel__stage {
+  --card-w: clamp(180px, 38cqw, 300px);
+  --card-h: calc(var(--card-w) * 3 / 2);
   position: relative;
   height: calc(var(--card-h) + 24px);
   perspective: 1200px;
-  transform-style: preserve-3d;
 }
 
 .stacked-carousel__card {
@@ -754,22 +758,6 @@ footer a.rounded-full:hover {
   display: block;
 }
 
-.stacked-carousel__caption {
-  position: absolute;
-  inset: auto 0 0 0;
-  padding: 48px 16px 18px;
-  background: linear-gradient(to top, rgba(15, 41, 63, 0.9), rgba(15, 41, 63, 0));
-  color: #fff;
-  font-weight: 700;
-  font-size: 18px;
-  text-align: center;
-  transition: opacity 0.5s ease;
-}
-
-.stacked-carousel__card[data-active="false"] .stacked-carousel__caption {
-  opacity: 0;
-}
-
 .stacked-carousel__dots {
   position: absolute;
   bottom: 0;
@@ -790,10 +778,6 @@ footer a.rounded-full:hover {
 .stacked-carousel__dots button.is-active {
   width: 28px;
   background: hsl(var(--accent));
-}
-
-@media (max-width: 1023px) {
-  .stacked-carousel { --card-w: clamp(200px, 52vw, 320px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
