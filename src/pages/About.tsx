@@ -225,15 +225,15 @@ const About = () => {
         </section>
 
         {/* Machinery Section — plant photo behind, flip cards on top */}
-        <section className="machinery-section relative isolate overflow-hidden py-20 md:py-24">
+        <section className="machinery-section relative isolate flex aspect-[3/2] items-center overflow-hidden bg-primary py-20 md:py-24">
           <img
             src={machineryBg}
             alt=""
             aria-hidden="true"
             loading="lazy"
-            className="absolute inset-0 -z-20 h-full w-full object-cover"
+            className="absolute inset-0 -z-20 h-full w-full object-contain"
           />
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto w-full px-4">
             <div className="machinery-heading text-center max-w-2xl mx-auto mb-12">
               <span className="eyebrow text-accent font-semibold uppercase tracking-wider text-sm mb-3 block">Our Equipment</span>
               <h2 className="about-section-title font-heading font-bold text-3xl mb-4">State-of-the-Art Machinery</h2>

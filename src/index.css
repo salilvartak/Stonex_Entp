@@ -724,8 +724,8 @@ footer a.rounded-full:hover {
 }
 
 .stacked-carousel__stage {
-  --card-w: clamp(180px, 46cqw, 360px);
-  --card-h: calc(var(--card-w) * 8 / 5);
+  --card-w: clamp(220px, 62cqw, 460px);
+  --card-h: calc(var(--card-w) * 5 / 4);
   position: relative;
   height: calc(var(--card-h) + 24px);
   perspective: 1200px;
@@ -807,7 +807,7 @@ footer a.rounded-full:hover {
 /* Below lg the carousel sits under the text, so it can use more width. */
 @media (max-width: 1023px) {
   .stacked-carousel__stage {
-    --card-w: clamp(210px, 60cqw, 360px);
+    --card-w: clamp(240px, 72cqw, 460px);
   }
 }
 
