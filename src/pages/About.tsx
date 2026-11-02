@@ -233,9 +233,8 @@ const About = () => {
             loading="lazy"
             className="absolute inset-0 -z-20 h-full w-full object-cover"
           />
-          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0F293F]/90 via-[#0F293F]/80 to-[#0F293F]/92" />
           <div className="container mx-auto px-4">
-            <div className="text-center max-w-2xl mx-auto mb-12">
+            <div className="machinery-heading text-center max-w-2xl mx-auto mb-12">
               <span className="eyebrow text-accent font-semibold uppercase tracking-wider text-sm mb-3 block">Our Equipment</span>
               <h2 className="about-section-title font-heading font-bold text-3xl mb-4">State-of-the-Art Machinery</h2>
               <p className="about-paragraph">
