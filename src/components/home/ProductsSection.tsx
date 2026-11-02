@@ -1,6 +1,8 @@
+import type React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useScrollReveal, gridRevealDelay } from "@/hooks/use-scroll-reveal";
 import calcitePowderImg from "@/assets/New Images/Calcite powder.jpg";
 import dolomitePowderImg from "@/assets/New Images/Dolomite Powder.jpg";
 import quartzPowderImg from "@/assets/New Images/Quartz Powder.jpg";
@@ -62,6 +64,8 @@ const products = [
 ];
 
 export const ProductsSection = () => {
+  const revealRef = useScrollReveal<HTMLDivElement>();
+
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
@@ -85,13 +89,14 @@ export const ProductsSection = () => {
         </div>
 
         {/* Optimized Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+        <div ref={revealRef} className="products-grid">
           {products.map((product, index) => (
             <Link
               key={product.id}
               to={`/products/${product.id}`}
-              className="product-card group"
-              style={{ animationDelay: `${index * 50}ms` }}
+              className="product-card reveal group"
+              data-reveal
+              style={{ "--reveal-delay": gridRevealDelay(index) } as React.CSSProperties}
             >
               <img src={product.image} alt={product.name} className="product-card__img" loading="lazy" />
 
