@@ -14,6 +14,8 @@ import {
 import founderImg from "@/assets/images/founder.webp";
 import machineryBg from "@/assets/images/machinery-bg.webp";
 import { EquipmentFlipCard } from "@/components/about/EquipmentFlipCard";
+import { useScrollReveal, gridRevealDelay } from "@/hooks/use-scroll-reveal";
+import valuesBg from "@/assets/New Images/our values.jpeg";
 import { Layers } from "lucide-react";
 
 const facilityImages = [
@@ -119,6 +121,8 @@ const machinery = [
 ];
 
 const About = () => {
+  const valuesRef = useScrollReveal<HTMLElement>();
+
   return (
     <div className="about-page home-typography min-h-screen">
       <Header />
@@ -289,10 +293,17 @@ const About = () => {
         </section>
 
         {/* Core Values */}
-        <section className="py-24 bg-muted/50">
+        <section ref={valuesRef} className="relative isolate overflow-hidden py-24">
+      <img
+        src={valuesBg}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        className="absolute inset-0 -z-20 h-full w-full object-cover"
+      />
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="machinery-heading text-center max-w-2xl mx-auto mb-16">
           <span className="eyebrow text-accent font-semibold uppercase tracking-wider text-sm mb-3 block">
             Our DNA
           </span>
@@ -309,13 +320,15 @@ const About = () => {
            2. lg:grid-cols-6 -> Desktop: We use 6 columns total.
         */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
-          {coreValues.map((value) => {
+          {coreValues.map((value, index) => {
             const Icon = value.icon;
 
             return (
               <div
                 key={value.title}
-                className="bg-card p-8 rounded-2xl border border-border/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-accent/50 group lg:col-span-2"
+                className="value-card reveal bg-card p-8 rounded-2xl border border-border/50 group lg:col-span-2"
+                data-reveal
+                style={{ "--reveal-delay": gridRevealDelay(index, 3) } as React.CSSProperties}
               >
                 <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
                   <Icon className="h-7 w-7 text-accent group-hover:text-accent-foreground transition-colors duration-300" />

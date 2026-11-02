@@ -1241,3 +1241,28 @@ footer a.rounded-full:hover {
     transition: none;
   }
 }
+
+/* About - Core Values cards: same scroll reveal + hover lift as the home product cards */
+.value-card.reveal {
+  transition: opacity 0.7s ease var(--reveal-delay, 0ms),
+    translate 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    scale 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.45s ease;
+}
+
+.value-card:active {
+  transform: scale(0.98);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .value-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 0 2px #d4af37, 0 22px 40px -16px rgba(15, 41, 63, 0.55);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .value-card.reveal {
+    transition: none;
+  }
+}
