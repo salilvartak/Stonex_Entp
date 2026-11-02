@@ -830,6 +830,13 @@ footer a.rounded-full:hover {
   transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.45s ease;
 }
 
+.product-card.reveal {
+  transition: opacity 0.7s ease var(--reveal-delay, 0ms),
+    translate 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    scale 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.45s ease;
+}
+
 .product-card:active {
   transform: scale(0.98);
 }
@@ -956,7 +963,7 @@ footer a.rounded-full:hover {
   .product-card:hover,
   .product-card:focus-visible {
     transform: translateY(-6px);
-    box-shadow: 0 22px 40px -16px rgba(15, 41, 63, 0.55);
+    box-shadow: 0 0 0 2px #d4af37, 0 22px 40px -16px rgba(15, 41, 63, 0.55);
   }
 
   .product-card:hover .product-card__img,
@@ -997,6 +1004,83 @@ footer a.rounded-full:hover {
   .product-card__footer,
   .product-card__panel,
   .product-card__corner {
+    transition: none;
+  }
+}
+
+/* =========================================
+   SCROLL POP-UP REVEAL
+   (product cards, industries heading + cards)
+   Uses the individual `translate` / `scale` properties so hover effects,
+   which use `transform`, are never delayed by the stagger.
+   ========================================= */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+}
+
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  translate: 0 55px;
+  scale: 0.97;
+  transition: opacity 0.7s ease var(--reveal-delay, 0ms),
+    translate 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    scale 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  translate: 0 0;
+  scale: 1;
+}
+
+.industry-card {
+  border: 1px solid transparent;
+}
+
+.industry-card.reveal {
+  transition: opacity 0.7s ease var(--reveal-delay, 0ms),
+    translate 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    scale 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.industry-card:hover {
+  transform: translateY(-6px);
+  border-color: #d4af37;
+  box-shadow: 0 14px 32px rgba(15, 41, 63, 0.12);
+}
+
+/* Single-column on phones: cards appear one at a time, so no stagger */
+@media (max-width: 600px) {
+  .reveal {
+    translate: 0 35px;
+    scale: 1;
+    --reveal-delay: 0ms !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    translate: none;
+    scale: none;
     transition: none;
   }
 }
