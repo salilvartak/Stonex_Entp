@@ -1088,12 +1088,19 @@ footer a.rounded-full:hover {
 /* =========================================
    ABOUT — MACHINERY SECTION + FLIP CARDS
    ========================================= */
-.about-page .machinery-section .about-section-title {
-  color: #fff;
+.about-page .machinery-section .about-section-title,
+.about-page .machinery-section .about-paragraph {
+  color: #0f293f;
 }
 
-.about-page .machinery-section .about-paragraph {
-  color: rgba(255, 255, 255, 0.85);
+/* Light frosted panel so the dark blue heading reads on the untinted photo */
+.machinery-heading {
+  padding: 28px 32px 12px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.86);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 40px -20px rgba(15, 41, 63, 0.45);
 }
 
 .equipment-flip {
@@ -1148,11 +1155,11 @@ footer a.rounded-full:hover {
   justify-content: center;
   gap: 10px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: #0f293f;
 }
 
 .equipment-flip__icon {
@@ -1168,13 +1175,13 @@ footer a.rounded-full:hover {
 }
 
 .about-page .equipment-flip__title {
-  color: #fff;
+  color: #0f293f;
   font-size: 22px;
 }
 
 .equipment-flip__count {
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.75);
+  color: #4a5b6b;
 }
 
 .equipment-flip__hint {
@@ -1185,7 +1192,7 @@ footer a.rounded-full:hover {
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.3px;
-  color: #d4af37;
+  color: #a8841a;
 }
 
 .equipment-flip__back {
