@@ -11,7 +11,7 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import founderImg from "@/assets/images/Founder.jpeg";
+import founderImg from "@/assets/images/founder.webp";
 
 const facilityImages = [
   { src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop", alt: "Manufacturing Plant" },
@@ -163,30 +163,16 @@ const About = () => {
         <section className="py-20 bg-muted">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Image */}
+          {/* Left Column - Image (shown uncropped: it has its own logo and 15+ badge) */}
           <div className="relative">
-            {/*
-                UPDATED CONTAINER:
-                1. Changed dimensions to be taller (h-96 on mobile, h-[500px] on desktop).
-                2. Changed rounded-full to rounded-xl for a rectangular look with soft corners.
-            */}
-            <div className="w-64 h-96 md:w-80 md:h-[500px] bg-card rounded-xl overflow-hidden shadow-xl mx-auto">
-              {/*
-                  UPDATED IMAGE:
-                  Added w-full h-full object-cover to ensure the image fills
-                  the tall rectangle perfectly without distorting.
-              */}
+            <div className="w-full max-w-xl mx-auto aspect-[1374/1145] bg-card rounded-xl overflow-hidden shadow-xl">
               <img
                 src={founderImg}
-                alt="Mr. Rajesh Doot"
+                alt="Mr. Rajesh Doot, Founder & Managing Director of Stonex Enterprises"
                 className="w-full h-full object-cover"
+                width={1374}
+                height={1145}
               />
-            </div>
-            {/* Experience Badge */}
-            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground px-6 py-3 rounded-lg shadow-xl whitespace-nowrap">
-              <div className="text-sm font-semibold text-center">
-                15+ Years Experience
-              </div>
             </div>
           </div>
 
