@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Facebook, Linkedin, Twitter } from "lucide-react";
-import logoImg from "@/assets/images/STONEX.png";
+import logoImg from "@/assets/images/stonex-logo.webp";
 
 export const Footer = () => {
   return (
