@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 /*
  * Every image in src/assets/about-carousel/ becomes a card, in filename order.
@@ -102,25 +101,7 @@ export const StackedCarousel = () => {
       </div>
 
       {total > 1 && (
-        <>
-          <button
-            type="button"
-            className="stacked-carousel__arrow stacked-carousel__arrow--prev"
-            aria-label="Previous image"
-            onClick={() => go(-1)}
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <button
-            type="button"
-            className="stacked-carousel__arrow stacked-carousel__arrow--next"
-            aria-label="Next image"
-            onClick={() => go(1)}
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
-
-          <div className="stacked-carousel__dots">
+        <div className="stacked-carousel__dots">
             {slides.map((slide, i) => (
               <button
                 key={slide.src}
@@ -131,8 +112,7 @@ export const StackedCarousel = () => {
                 className={i === active ? "is-active" : ""}
               />
             ))}
-          </div>
-        </>
+        </div>
       )}
     </div>
   );
