@@ -332,7 +332,7 @@ const About = () => {
             return (
               <div
                 key={value.title}
-                className="value-card reveal bg-card p-8 rounded-2xl border border-border/50 group lg:col-span-2"
+                className="value-card reveal p-8 rounded-2xl group lg:col-span-2"
                 data-reveal
                 style={{ "--reveal-delay": gridRevealDelay(index, 3) } as React.CSSProperties}
               >
