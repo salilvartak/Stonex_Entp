@@ -113,8 +113,8 @@ export const Footer = () => {
               </li>
               <li>
                 <a href="mailto:stonex.enterprises8801@gmail.com" className="flex items-center gap-3 text-primary-foreground/80 hover:text-accent transition-colors">
-                  <Mail className="h-5 w-5 text-accent" />
-                  <span>Stonex.enterprises8801@gmail.com</span>
+                  <Mail className="h-5 w-5 shrink-0 text-accent" />
+                  <span className="min-w-0 break-words">Stonex.enterprises8801@<wbr />gmail.com</span>
                 </a>
               </li>
             </ul>
