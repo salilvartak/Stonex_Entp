@@ -18,14 +18,20 @@ import { useScrollReveal, gridRevealDelay } from "@/hooks/use-scroll-reveal";
 import valuesBg from "@/assets/New Images/our values.jpeg";
 import { Layers } from "lucide-react";
 
-const facilityImages = [
-  { src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop", alt: "Manufacturing Plant" },
-  { src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop", alt: "Warehouse" },
-  { src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop", alt: "Mining Operations" },
-  { src: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=600&h=400&fit=crop", alt: "Processing Unit" },
-  { src: "https://images.unsplash.com/photo-1590959651373-a3db0f38a961?w=600&h=400&fit=crop", alt: "Quality Lab" },
-  { src: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&h=400&fit=crop", alt: "Logistics Yard" },
-];
+/*
+ * Every image in src/assets/facilities/ is shown, in filename order.
+ * Name files "<number>-<Description>.webp"; the description is the alt text.
+ */
+const facilityModules = import.meta.glob<string>(
+  "@/assets/facilities/*.{webp,jpg,jpeg,png}",
+  { eager: true, import: "default" }
+);
+const facilityImages = Object.keys(facilityModules)
+  .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+  .map((path) => ({
+    src: facilityModules[path],
+    alt: (path.split("/").pop() ?? "").replace(/\.[^.]+$/, "").replace(/^\d+\s*[-_.]\s*/, ""),
+  }));
 
 const FacilitiesCarousel = () => {
   const [api, setApi] = useState<CarouselApi>();
@@ -65,7 +71,7 @@ const FacilitiesCarousel = () => {
     >
       <CarouselContent>
         {facilityImages.map((image) => (
-          <CarouselItem key={image.alt} className="md:basis-1/2 lg:basis-1/3">
+          <CarouselItem key={image.src} className="basis-full sm:basis-1/2 lg:basis-1/4">
             <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
               <img
                 src={image.src}
@@ -326,7 +332,7 @@ const About = () => {
             return (
               <div
                 key={value.title}
-                className="value-card reveal bg-card p-8 rounded-2xl border border-border/50 group lg:col-span-2"
+                className="value-card reveal p-8 rounded-2xl group lg:col-span-2"
                 data-reveal
                 style={{ "--reveal-delay": gridRevealDelay(index, 3) } as React.CSSProperties}
               >
