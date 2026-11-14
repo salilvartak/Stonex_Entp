@@ -3,7 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import paintCoatingImage from "@/assets/images/paint&coating.jpeg";
 import { productContent } from "@/content/products";
 import { RichText } from "@/components/RichText";
@@ -34,12 +34,22 @@ const sectionImages: [RegExp, string][] = [
   [/plastic|polymer|masterbatch|pvc|pe |pp /i, "https://blog.industryinform.com/wp-content/uploads/2018/07/Plastics_industry_2.jpg"],
 ];
 
+// Scroll-in animation: image slides in from its own side, text from the opposite side.
+const EASE = [0.22, 1, 0.36, 1] as const;
+const slideIn = (fromX: number, delay = 0, reduce = false) => ({
+  initial: reduce ? { opacity: 0 } : { opacity: 0, x: fromX },
+  whileInView: { opacity: 1, x: 0 },
+  viewport: { once: true, amount: 0.25 },
+  transition: { duration: reduce ? 0.3 : 0.9, delay, ease: EASE },
+});
+
 const imageFor = (title: string) =>
   sectionImages.find(([re]) => re.test(title))?.[1] ?? paintCoatingImage;
 
 const ProductApplications = () => {
   const { productId } = useParams<{ productId: string }>();
   
+  const reduceMotion = useReducedMotion() ?? false;
   const content = productId ? productContent[productId] : undefined;
   const product = content
     ? {
@@ -70,7 +80,7 @@ const ProductApplications = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="pt-24 pb-16">
+      <main className="pt-24 pb-16 overflow-x-clip">
         {/* Header Section */}
         <section className="container mx-auto px-4 mb-16 text-center">
             <div className="inline-block mb-4">
@@ -94,16 +104,14 @@ const ProductApplications = () => {
         {/* Applications List */}
         <div className="container mx-auto px-4 space-y-24">
           {product.sections.map((section, index) => (
-            <motion.div 
+            <div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6 }}
               className="[&::after]:content-[''] [&::after]:block [&::after]:clear-both"
             >
               {/* Image floats top, text wraps beside it then spans full width once it runs past the image */}
-              <div className={`relative group overflow-hidden rounded-2xl shadow-xl float-none w-full sm:w-2/3 lg:w-3/5 mb-6 ${
+              <motion.div
+                {...slideIn(index % 2 === 0 ? -160 : 160, 0, reduceMotion)}
+                className={`relative group overflow-hidden rounded-2xl shadow-xl float-none w-full sm:w-2/3 lg:w-3/5 mb-6 ${
                 index % 2 === 0 ? "sm:float-left sm:mr-8" : "sm:float-right sm:ml-8"
               }`}>
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
@@ -112,11 +120,14 @@ const ProductApplications = () => {
                       alt={section.title}
                       className="w-full h-[300px] lg:h-[400px] object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-              </div>
+              </motion.div>
 
-              <h2 className="text-3xl font-bold text-foreground border-l-4 border-primary pl-4 mb-6">
+              <motion.h2
+                {...slideIn(index % 2 === 0 ? 100 : -100, 0.15, reduceMotion)}
+                className="text-3xl font-bold text-foreground border-l-4 border-primary pl-4 mb-6"
+              >
                 {section.title}
-              </h2>
+              </motion.h2>
 
               {/* Beside the image while it's still floated - kept narrow on purpose */}
               <ul className="space-y-4">
@@ -125,10 +136,7 @@ const ProductApplications = () => {
                   return (
                     <motion.li
                       key={i}
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.1 * i, duration: 0.5 }}
+                      {...slideIn(index % 2 === 0 ? 60 : -60, 0.25 + 0.08 * i, reduceMotion)}
                       className="flex items-start gap-3"
                     >
                       <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
@@ -151,10 +159,7 @@ const ProductApplications = () => {
                     return (
                       <motion.li
                         key={i}
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 * i, duration: 0.5 }}
+                        {...slideIn(index % 2 === 0 ? 60 : -60, 0.25 + 0.08 * i, reduceMotion)}
                         className="flex items-start gap-3"
                       >
                         <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
@@ -169,7 +174,7 @@ const ProductApplications = () => {
                   })}
                 </ul>
               )}
-            </motion.div>
+            </div>
           ))}
         </div>
 
