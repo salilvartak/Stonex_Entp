@@ -1,3 +1,4 @@
+import { RichText } from "@/components/RichText";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Phone, ArrowRight } from "lucide-react";
@@ -15,7 +16,7 @@ export const CTASection = () => {
             Ready to Enhance Your Products with Premium Minerals?
           </h2>
           <p className="text-xl text-primary-foreground/90 mb-10">
-            Get in touch with our experts for customized solutions, bulk orders, and competitive pricing.
+            <RichText text="Partner with **STONEX ENTERPRISES** for quality mineral fillers and extenders tailored to your industrial requirements. Connect with our team for customized product specifications, bulk orders and competitive pricing." />
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="cta" size="xl" asChild>

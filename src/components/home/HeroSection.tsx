@@ -1,3 +1,4 @@
+import { RichText } from "@/components/RichText";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { MapPin, ArrowRight } from "lucide-react";
@@ -52,12 +53,15 @@ export const HeroSection = () => {
           
 
           <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-primary-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            One of India's Leading <span className="text-accent">Manufacturer & Supplier</span>{" "}
+            One of India’s Leading <span className="text-accent">Manufacturers & Suppliers</span>{" "}
             of Premium Mineral Fillers & Extenders
           </h1>
 
-          <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8 max-w-2xl animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            Premium Quality Quartz Powder, Quartz Grits, Calcite Powder, Dolomite Powder, Dolomite Grits, Coated Dolomite Powder, Coated Calcite Powder and Pebbles, crafted for exceptional performance across multiple sectors. Proudly delivering trusted Rajasthan mineral excellence with a strong commitment to purity, consistency, and reliability providing high-quality mineral solutions for diverse industrial applications.
+          <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-4 max-w-2xl animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            <RichText text="**STONEX ENTERPRISES** offers a comprehensive range of premium quality **Quartz Powder, Quartz Grits, Calcite Powder, Dolomite Powder, Dolomite Grits, Stearic Acid Coated Dolomite Powder, Stearic Acid Coated Calcite Powder and Natural Pebbles**, engineered to meet the diverse requirements of multiple industries." />
+          </p>
+          <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8 max-w-2xl animate-fade-up" style={{ animationDelay: "0.25s" }}>
+            Rooted in Rajasthan’s rich mineral resources, we are committed to delivering reliable mineral solutions with a strong focus on purity, consistent quality and dependable supply. Our products serve a wide range of industrial applications, reflecting our dedication to quality, performance and long term customer relationships.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
