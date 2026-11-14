@@ -58,7 +58,7 @@ export const HeroSection = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-4 max-w-2xl animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            <RichText text="**STONEX ENTERPRISES** offers a comprehensive range of premium quality **Quartz Powder, Quartz Grits, Calcite Powder, Dolomite Powder, Dolomite Grits, Stearic Acid Coated Dolomite Powder, Stearic Acid Coated Calcite Powder and Natural Pebbles**, engineered to meet the diverse requirements of multiple industries." />
+            <RichText text="**STONEX ENTERPRISES** offers a comprehensive range of premium quality **Calcite Powder, Dolomite Powder, Quartz Powder, Quartz Grits, Dolomite Grits, Stearic Acid Coated Dolomite Powder, Stearic Acid Coated Calcite Powder and Natural Pebbles**, engineered to meet the diverse requirements of multiple industries." />
           </p>
           <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8 max-w-2xl animate-fade-up" style={{ animationDelay: "0.25s" }}>
             Rooted in Rajasthan’s rich mineral resources, we are committed to delivering reliable mineral solutions with a strong focus on purity, consistent quality and dependable supply. Our products serve a wide range of industrial applications, reflecting our dedication to quality, performance and long term customer relationships.

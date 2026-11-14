@@ -183,9 +183,10 @@ const Contact = () => {
                       <option value="dolomite">Dolomite Powder</option>
                       <option value="quartz-powder">Quartz Powder</option>
                       <option value="quartz-grits">Quartz Grits</option>
-                      <option value="talc">Talc Powder</option>
-                      <option value="coated-calcite">Coated Calcite</option>
-                      <option value="coated-dolomite">Coated Dolomite</option>
+                      <option value="dolomite-grits">Dolomite Grits</option>
+                      <option value="coated-dolomite">Coated Dolomite Powder</option>
+                      <option value="coated-calcite">Coated Calcite Powder</option>
+                      <option value="pebbles">Pebbles</option>
                       <option value="other">Other</option>
                     </select>
                   </div>

@@ -60,10 +60,9 @@ export const Footer = () => {
                 { name: "Calcite Powder", id: "calcite-powder" },
                 { name: "Dolomite Powder", id: "dolomite-powder" },
                 { name: "Quartz Powder", id: "quartz-powder" },
-                { name: "Quartz Gritz", id: "quartz-grits" },
-                { name: "Dolomite Gritz", id: "dolomite-grits"},
-                { name: "Coated Dolomite Powder", id: "coated-dolomite"},
-                
+                { name: "Quartz Grits", id: "quartz-grits" },
+                { name: "Dolomite Grits", id: "dolomite-grits" },
+                { name: "Coated Dolomite Powder", id: "coated-dolomite" },
                 { name: "Coated Calcite Powder", id: "coated-calcite" },
                 { name: "Pebbles", id: "pebble" },
               ].map((product) => (

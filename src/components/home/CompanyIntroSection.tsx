@@ -17,7 +17,7 @@ export const CompanyIntroSection = () => {
               Manufacturing Excellence Since 2011
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-4 [&_strong]:text-foreground">
-              <RichText text="**STONEX ENTERPRISES** is one of India’s leading manufacturer and supplier of premium quality mineral fillers and extenders, backed by extensive expertise in mineral processing and manufacturing. Our comprehensive product portfolio includes **Quartz Powder, Quartz Grits, Calcite Powder, Dolomite Powder** and **Dolomite Grits**, valued for their high purity, consistent quality and reliable performance across diverse industrial applications." />
+              <RichText text="**STONEX ENTERPRISES** is one of India’s leading manufacturer and supplier of premium quality mineral fillers and extenders, backed by extensive expertise in mineral processing and manufacturing. Our comprehensive product portfolio includes **Calcite Powder, Dolomite Powder, Quartz Powder, Quartz Grits** and **Dolomite Grits**, valued for their high purity, consistent quality and reliable performance across diverse industrial applications." />
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed mb-4 [&_strong]:text-foreground">
               <RichText text="Our minerals serve a wide range of industries, including **Slabs & Countertops, Paints & Coatings, Plastics & Polymers, PVC Pipes & Fittings, Wire & Cable, Rubber, Masterbatch, Agriculture, Glass, Ceramics, Steel & Metallurgy and Construction**." />
