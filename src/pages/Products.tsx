@@ -45,20 +45,20 @@ const products = [
     image: dolomiteGritsImg,
   },
   {
-    id: "coated-calcite",
-    name: "Coated Calcite Powder",
-    purity: "97%+",
-    image: coatedCalciteImg,
-  },
-  {
     id: "coated-dolomite",
     name: "Coated Dolomite Powder",
     purity: "97%+",
     image: coatedDolomiteImg,
   },
   {
+    id: "coated-calcite",
+    name: "Coated Calcite Powder",
+    purity: "97%+",
+    image: coatedCalciteImg,
+  },
+  {
     id: "pebble",
-    name: "Pebble",
+    name: "Pebbles",
     purity: "97%+",
     image: pebbleImg,
   },
