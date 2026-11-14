@@ -17,6 +17,7 @@ import { EquipmentFlipCard } from "@/components/about/EquipmentFlipCard";
 import { useScrollReveal, gridRevealDelay } from "@/hooks/use-scroll-reveal";
 import valuesBg from "@/assets/New Images/our values.jpeg";
 import { Layers } from "lucide-react";
+import { RichText } from "@/components/RichText";
 
 /*
  * Every image in src/assets/facilities/ is shown, in filename order.
@@ -91,32 +92,32 @@ const coreValues = [
   {
     title: "Quality Excellence",
     icon: Award,
-    description: "We deliver consistent, high-purity mineral solutions that meet industry standards and customer expectations.",
+    description: "We deliver high purity mineral solutions with consistent quality, reliable performance and a strong commitment to industry standards and customer expectations.",
   },
   {
     title: "Customer Focus",
     icon: Users,
-    description: "We build long-term partnerships through reliability, responsiveness, and solutions tailored to customer needs.",
+    description: "We build lasting business relationships through dependable service, responsive communication, and mineral solutions tailored to our customers' specific requirements.",
   },
   {
     title: "Innovation",
     icon: Lightbulb,
-    description: "We use advanced technologies and continuous improvement to develop efficient, high-performance mineral solutions.",
+    description: "We embrace advanced processing technologies and continuous improvement to enhance product quality, manufacturing efficiency and performance across diverse industrial applications.",
   },
   {
     title: "Sustainability",
     icon: Leaf,
-    description: "We support responsible growth through sustainable mining, efficient processing, and environmental stewardship.",
+    description: "We promote responsible mineral sourcing, efficient resource utilization and environmentally conscious manufacturing practices to support sustainable industrial growth.",
   },
   {
     title: "Integrity",
     icon: Shield,
-    description: "We conduct business with honesty, transparency, accountability, and ethical responsibility.",
+    description: "We uphold honesty, transparency, accountability and ethical business practices in every interaction with our customers, suppliers and business partners.",
   },
   {
     title: "Teamwork",
     icon: Users2,
-    description: "We promote collaboration, mutual respect, and shared responsibility to achieve operational excellence and lasting success.",
+    description: "We promote collaboration, mutual respect and shared responsibility to strengthen operational excellence and achieve lasting success together.",
   },
 ];
 
@@ -138,10 +139,11 @@ const About = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl">
               <h1 className="about-welcome-title font-heading font-bold text-4xl md:text-5xl text-primary-foreground mb-6">
-                Welcome to Stonex Enterprises
+                Welcome to STONEX ENTERPRISES
               </h1>
+              <p className="font-heading font-bold text-2xl text-accent mb-4">Where Purity Meets Perfection</p>
               <p className="hero-description text-xl text-primary-foreground/90">
-                India's leading manufacturer of premium mineral Fillers & Extenders with over 15 years of expertise
+                With over 15 years of industry expertise, STONEX ENTERPRISES is a trusted manufacturer and supplier of premium quality mineral fillers and extenders, delivering reliable mineral solutions to diverse industries across India.
               </p>
             </div>
           </div>
@@ -155,18 +157,19 @@ const About = () => {
               <h2 className="about-section-title font-heading font-bold text-3xl text-foreground mb-6">
                 Pioneering Quality Since 2011
               </h2>
-              <div className="prose prose-lg text-muted-foreground">
-                <p className="about-paragraph mb-4">
-                  Empowering Diverse Industries with High Performance Mineral Solutions: Since 2011, we have been delivering high quality, performance driven mineral solutions to a wide range of industries. We are one of Rajasthan’s leading manufacturers and suppliers of premium mineral fillers and extenders, offering a comprehensive portfolio of Quartz Powder & Grits, Calcite Powder, Dolomite Powder & Grits, Coated Calcite Powder and Coated Dolomite Powder.
-
+              <div className="prose prose-lg text-muted-foreground [&_strong]:text-foreground">
+                <p className="about-paragraph mb-4 font-bold text-foreground">
+                  Empowering Industries with High Performance Mineral Solutions
                 </p>
                 <p className="about-paragraph mb-4">
-                 Our products are trusted across diverse industrial sectors and manufacturing applications. With a strong focus on quality, consistency, advanced processing and reliable supply, we provide mineral solutions engineered to enhance product performance, optimize manufacturing efficiency and support consistent end product quality, while building long term value and complete customer satisfaction.
-
-
+                  <RichText text="Established in 2011, **STONEX ENTERPRISES** is one of Rajasthan's leading mineral manufacturers and suppliers, recognized for its commitment to quality, manufacturing excellence and customer satisfaction." />
                 </p>
-                
-                
+                <p className="about-paragraph mb-4">
+                  With established mining operations, strategically located manufacturing facilities and advanced mineral processing technologies, we have developed the capabilities to serve diverse industrial requirements. Our manufacturing processes are supported by modern machinery, experienced professionals and stringent quality management systems to ensure consistent product quality, precise particle sizing and dependable supply.
+                </p>
+                <p className="about-paragraph mb-4">
+                  <RichText text="Driven by continuous improvement, technical expertise and a customer focused approach, we strive to build lasting industrial partnerships through transparency, reliability and competitive solutions. At **STONEX ENTERPRISES**, our commitment is to deliver consistent quality, strengthen customer confidence and create long term value for the industries we serve." />
+                </p>
               </div>
             </div>
           </div>
@@ -197,12 +200,35 @@ const About = () => {
             <h2 className="founder-name font-heading font-bold text-3xl text-foreground mb-1">
               Mr. Rajesh Doot
             </h2>
-            <p className="founder-role text-lg text-muted-foreground mb-4">
-              Founder & Managing Director
+            <p className="founder-role text-lg text-muted-foreground font-bold mb-4">
+              (Founder & Managing Director)
             </p>
-            <p className="about-paragraph text-muted-foreground leading-relaxed">
-              Founded in 2011 by Mr. Rajesh Doot, our company is backed by over 15 years of expertise in mineral mining, grinding, processing and quality management. Under his leadership, we have established multiple strategically located manufacturing facilities across Rajasthan, with a strong commitment to delivering high quality, consistent and reliable mineral products that meet the evolving requirements of diverse industries. Our state-of-the-art manufacturing facilities are equipped with advanced processing and material handling technologies, including Ball Mills, Micronizers, VSI Machines, 28 Roller Mills with Classifier Systems, Automatic Grits Colour Sorting Machines, Advanced Crushed Stone Sorting Machines, Magnetic Separation Systems, Powder Coating Machines and Pebble Processing Units. These capabilities enable us to achieve precise particle sizing, efficient processing, consistent quality and reliable product performance across our diverse mineral product range. Supported by a team of skilled, disciplined and highly motivated professionals, we continuously focus on technological advancement, operational efficiency, stringent quality management and customer satisfaction. Today with an impressive production capacity of 23,0000+ MT per annum, we proudly serve customers across Indian markets, delivering quality, reliability, consistency and value with every product we supply.
-            </p>
+            <div className="space-y-4 [&_strong]:text-foreground">
+              <p className="about-paragraph text-muted-foreground leading-relaxed">
+                <RichText text="Founded in 2011 by **Mr. Rajesh Doot**, STONEX ENTERPRISES is built on over 15 years of expertise in mineral mining, grinding, processing and quality management. Under his leadership, we have established multiple strategically located manufacturing facilities across Rajasthan, supported by our own mining operations and carefully selected mineral sources. This integrated sourcing network strengthens raw material consistency, supply reliability and quality control, enabling us to meet the evolving requirements of diverse industries." />
+              </p>
+              <p className="about-paragraph text-muted-foreground leading-relaxed">
+                <RichText text="Our manufacturing facilities are equipped with advanced processing and material handling technologies, enabling us to produce a diverse range of mineral products with controlled particle sizing and consistent quality. Our equipment includes **Ball Mills, Micronizers, VSI Grinding Units, 28-Roller Mills with Classifier Systems, Automatic Grits Colour Sorting Machines, Advanced Crushed Stone Sorting Machines, Magnetic Separation Systems, Powder Coating Machines and Pebble Processing Units.** These integrated capabilities support efficient mineral processing, precise particle size classification, effective material separation and consistent product quality across our portfolio." />
+              </p>
+              <p className="about-paragraph text-muted-foreground leading-relaxed">
+                With the support of a skilled and dedicated team, Mr. Rajesh Doot continues to emphasize technological advancement, process optimization, stringent quality management, operational efficiency and customer satisfaction.
+              </p>
+              <div className="grid grid-cols-3 gap-4 py-2 text-center">
+                {[
+                  { value: "230,000+ MT", label: "Annual Capacity" },
+                  { value: "2011", label: "Established" },
+                  { value: "15+", label: "Years of Experience" },
+                ].map((stat) => (
+                  <div key={stat.label} className="rounded-lg bg-card p-4 shadow-sm">
+                    <div className="font-heading font-bold text-xl md:text-2xl text-primary">{stat.value}</div>
+                    <div className="text-xs md:text-sm text-muted-foreground">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+              <p className="about-paragraph text-muted-foreground leading-relaxed">
+                <RichText text="With an annual production capacity of **230,000+ MT**, STONEX ENTERPRISES continues to strengthen its presence across Indian markets, building long term industrial partnerships through quality, consistency, reliability and customer focused solutions." />
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -211,14 +237,14 @@ const About = () => {
         {/* Manufacturing Philosophy */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-card p-8 rounded-lg shadow-md">
                 <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mb-6">
                   <Award className="h-7 w-7 text-accent" />
                 </div>
                 <h3 className="about-subtitle font-heading font-bold text-2xl text-foreground mb-4">Our Vision</h3>
                 <p className="about-paragraph text-muted-foreground">
-                  To be a trusted leader in India’s industrial mineral industry, setting new benchmarks in quality, consistency, innovation, and sustainable mineral processing while creating long-term value for our customers, people, and communities.
+                  To be a trusted leader in India's industrial mineral industry by setting new benchmarks in product quality, consistency, technological innovation and sustainable mineral processing. We aspire to build lasting partnerships, create meaningful value for our customers and people and contribute positively to the communities we serve.
                 </p>
               </div>
               <div className="bg-card p-8 rounded-lg shadow-md">
@@ -227,7 +253,16 @@ const About = () => {
                 </div>
                 <h3 className="about-subtitle font-heading font-bold text-2xl text-foreground mb-4">Our Mission</h3>
                 <p className="about-paragraph text-muted-foreground">
-                 To deliver high-quality, precisely processed industrial minerals through advanced technology, strict quality control, reliable supply, technical expertise, and customer-focused solutions, while creating long-term value through consistent performance.
+                  To deliver premium quality, precisely processed industrial minerals through advanced manufacturing technology, stringent quality control, reliable supply capabilities and technical expertise. We are committed to providing customer focused solutions, maintaining consistent product performance and building long term relationships while creating sustainable value for our customers and business partners.
+                </p>
+              </div>
+              <div className="bg-card p-8 rounded-lg shadow-md">
+                <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mb-6">
+                  <Leaf className="h-7 w-7 text-accent" />
+                </div>
+                <h3 className="about-subtitle font-heading font-bold text-2xl text-foreground mb-4">Environmental Responsibility</h3>
+                <p className="about-paragraph text-muted-foreground">
+                  To promote responsible mineral processing through efficient resource utilization, energy efficient operations, waste minimization and sustainable manufacturing practices. We are committed to reducing our environmental footprint, conserving natural resources and supporting sustainable industrial growth for future generations.
                 </p>
               </div>
             </div>
@@ -248,7 +283,7 @@ const About = () => {
               <span className="eyebrow text-accent font-semibold uppercase tracking-wider text-sm mb-3 block">Our Equipment</span>
               <h2 className="about-section-title font-heading font-bold text-3xl mb-4">State-of-the-Art Machinery</h2>
               <p className="about-paragraph">
-                We leverage advanced indigenous and globally sourced machinery to deliver superior quality and consistency.
+                <RichText text="At **STONEX ENTERPRISES**, we utilise advanced Indian and globally sourced machinery to ensure precision processing, consistent product quality and reliable performance." />
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-6 md:gap-8">
@@ -271,15 +306,15 @@ const About = () => {
               </div>
               <div>
                 <div className="stat-number font-heading font-bold text-4xl md:text-5xl text-primary-foreground mb-2">
-                  8
+                  9
                 </div>
                 <p className="stat-label text-primary-foreground/70">Plants</p>
               </div>
               <div>
                 <div className="stat-number font-heading font-bold text-4xl md:text-5xl text-primary-foreground mb-2">
-                  5
+                  4
                 </div>
-                <p className="stat-label text-primary-foreground/70">Mines</p>
+                <p className="stat-label text-primary-foreground/70">Mining Locations</p>
               </div>
             </div>
           </div>
@@ -291,7 +326,7 @@ const About = () => {
             <div className="text-center max-w-2xl mx-auto mb-12">
               <h2 className="about-section-title font-heading font-bold text-3xl text-foreground mb-4">Our Facilities</h2>
               <p className="about-paragraph text-muted-foreground">
-                Explore a visual journey through our advanced plants and efficient mining operations.
+                Explore our advanced manufacturing facilities, modern mineral processing plants and carefully managed mining operations. At STONEX ENTERPRISES, we combine industry expertise, efficient processing technologies and stringent quality control to deliver high purity minerals with consistent quality and reliable performance.
               </p>
             </div>
             <FacilitiesCarousel />
@@ -317,7 +352,7 @@ const About = () => {
             Our Core Values
           </h2>
           <p className="about-paragraph text-muted-foreground text-lg">
-            The core principles that shape our values, inspire our actions and define our commitment to you.
+            The fundamental principles that define who we are, guide our decisions, inspire our actions and strengthen our commitment to quality, integrity, innovation and customer satisfaction.
           </p>
         </div>
 

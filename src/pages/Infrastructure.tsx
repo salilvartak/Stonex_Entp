@@ -2,35 +2,28 @@ import React, { useState } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import { RichText } from "@/components/RichText";
 import { Factory, Mountain, FlaskConical, Warehouse, MapPin, Cog } from "lucide-react";
 
-// 1. Updated Data with Images for Mines
+// Mining locations
 const mineLocations = [
-  { 
-    name: "Ajmer, Nasirabad, Rajasthan", 
-    minerals: "Quartz",
-    image: "https://samasinc.com/wp-content/uploads/2025/02/chris-6LNv5BmYuvI-unsplash-scaled.jpg" 
-  },
-  { 
-    name: "Makrana, Rajasthan", 
-    minerals: "Calcite",
-    image: "https://ptso1.com/wp-content/uploads/2016/02/IMG_0254.jpg"
-  },
-  
+  { name: "Banswada", minerals: "Quartz", image: "https://samasinc.com/wp-content/uploads/2025/02/chris-6LNv5BmYuvI-unsplash-scaled.jpg" },
+  { name: "Makrana", minerals: "Calcite", image: "https://ptso1.com/wp-content/uploads/2016/02/IMG_0254.jpg" },
+  { name: "Chatarpur", minerals: "Calcite", image: "https://ptso1.com/wp-content/uploads/2016/02/IMG_0254.jpg" },
+  { name: "Rajsamand", minerals: "Dolomite", image: "https://samasinc.com/wp-content/uploads/2025/02/chris-6LNv5BmYuvI-unsplash-scaled.jpg" },
 ];
 
-// 2. Updated Data with Map Queries for Plants
-// Note: We use a generic Google Maps embed query. 
-// For production, you should use the official Google Maps Embed API Key.
+// Manufacturing plants with their Google Maps locations
 const plants = [
-  { name: "Adv Techno Mine and Minerals", location: "W5X5+76C Kotrii, Rajasthan", query: "W5X5+76C Kotrii, Rajasthand" },
-  { name: "Natural Minerals Resources", location: "W5X5+76C Kotrii, Rajasthan", query: "W5X5+76C Kotrii, Rajasthan" },
-  { name: "RD Microns LLP", location: "R4V2+4P7 Girdharipura, Rajasthan", query: "R4V2+4P7 Girdharipura, Rajasthan" },
-  { name: "Stonex Enterprises", location: "W5X5+76C Kotrii, Rajasthan", query: "W5X5+76C Kotrii, Rajasthan" },
-  { name: "Stonex Enterprises, Borada", location: "W5X5+76C Kotrii, Rajasthan", query: "W5X5+76C Kotrii, Rajasthan" },
-  { name: "RRR Microns", location: "52JV+Q8J Borada, Rajasthan", query: "52JV+Q8J Borada, Rajasthan" }, // Fallback if specific place not found
-  { name: "M/S Bal Gopal Microns llp", location: "6WJ3+C98 Saprao Ka Gurha, Rajasthan", query: "6WJ3+C98 Saprao Ka Gurha, Rajasthan" },
-  
+  { name: "Advance Techno Mines & Minerals, Kotri, Dariba", location: "W5X5+965, Advance Tekno M&M, kotdi, Dariba, Rajasthan 313211", query: "W5X5+965, Advance Tekno M&M, kotdi, Dariba, Rajasthan 313211" },
+  { name: "Natural Minerals Resources, Kotri, Dariba", location: "Natural Mineral Resources W5X5+965, kotri, Dariba, Railmagra, Rajasthan 313211", query: "Natural Mineral Resources W5X5+965, kotri, Dariba, Railmagra, Rajasthan 313211" },
+  { name: "Stonex Enterprises, Kotri, Dariba", location: "W5X5+965, Stonex Enterprises, Kotri, Dariba, Railmagra, Rajasthan 313211", query: "W5X5+965, Stonex Enterprises, Kotri, Dariba, Railmagra, Rajasthan 313211" },
+  { name: "RD Micron LLP, Ricco Sanwad", location: "R4V2+3Q6, RD Microns Mavli, Rajasthan 313206", query: "R4V2+3Q6, RD Microns Mavli, Rajasthan 313206" },
+  { name: "Stonex Enterprises, Borada, Sarwar", location: "52JQ+RJ Stonex Enterprises, Borada, Rajasthan 305412", query: "52JQ+RJ Stonex Enterprises, Borada, Rajasthan 305412" },
+  { name: "RRR Microns Pvt Ltd, Borada, Sarwar", location: "52JV+WF5, RRR Micron Pvt, Borada, Rajasthan 305412", query: "52JV+WF5, RRR Micron Pvt, Borada, Rajasthan 305412" },
+  { name: "Bal Gopal Microns LLP, Sapro ka Gurah, Amet", location: "6WJ3+M22, Bal Gopal Microns LLP, Saprao Ka Gurha, Amet, Rajasthan 313332", query: "6WJ3+M22, Bal Gopal Microns LLP, Saprao Ka Gurha, Amet, Rajasthan 313332" },
+  { name: "Raj Microns Pvt Ltd, Makrana", location: "E 203 A, Raj Micron Pvt, industrial Area, Makrana, Rajasthan 341502", query: "E 203 A, Raj Micron Pvt, industrial Area, Makrana, Rajasthan 341502" },
+  { name: "RR Global Industries, Borada, Sarwar", location: "R R global industries 52FQ+74G, RJ SH 7E, Borada, Dhanma, Rajasthan 305412", query: "R R global industries 52FQ+74G, RJ SH 7E, Borada, Dhanma, Rajasthan 305412" },
 ];
 
 const machinery = [
@@ -59,8 +52,8 @@ const Infrastructure = () => {
               <h1 className="font-heading font-bold text-4xl md:text-5xl text-primary-foreground mb-6">
                 Our Infrastructure
               </h1>
-              <p className="text-xl text-primary-foreground/90">
-                World-class facilities and advanced machinery for premium mineral processing
+              <p className="text-xl font-bold text-primary-foreground/90">
+                World Class Infrastructure & Advanced Technology for Precision Mineral Processing
               </p>
             </div>
           </div>
@@ -71,27 +64,27 @@ const Infrastructure = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
-                Scale & Capability
+                Advanced Infrastructure & Manufacturing Excellence
               </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                With multiple strategically located mines, state-of-the-art manufacturing plants, in-house quality control laboratory, and efficient warehousing, Stonex Enterprises has the infrastructure to meet the demands of industries across India and beyond.
+              <p className="text-muted-foreground text-lg leading-relaxed [&_strong]:text-foreground">
+                <RichText text="With strategically located mines, well equipped manufacturing facilities, advanced mineral processing machinery and an in house quality control laboratory, **STONEX ENTERPRISES** has established a strong infrastructure to serve the diverse requirements of industries across India." />
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
               <div className="bg-card p-6 rounded-lg shadow-md text-center">
-                <div className="font-heading font-bold text-3xl text-accent mb-2">8</div>
+                <div className="font-heading font-bold text-3xl text-accent mb-2">9</div>
                 <p className="text-muted-foreground">Manufacturing Plants</p>
               </div>
               <div className="bg-card p-6 rounded-lg shadow-md text-center">
-                <div className="font-heading font-bold text-3xl text-accent mb-2">2</div>
-                <p className="text-muted-foreground">Mine Locations</p>
+                <div className="font-heading font-bold text-3xl text-accent mb-2">4</div>
+                <p className="text-muted-foreground">Mining Locations</p>
               </div>
               <div className="bg-card p-6 rounded-lg shadow-md text-center">
                 <div className="font-heading font-bold text-3xl text-accent mb-2">1</div>
                 <p className="text-muted-foreground">Warehouse Locations</p>
               </div>
               <div className="bg-card p-6 rounded-lg shadow-md text-center">
-                <div className="font-heading font-bold text-3xl text-accent mb-2">180K+ MT</div>
+                <div className="font-heading font-bold text-3xl text-accent mb-2">230,000+ MT</div>
                 <p className="text-muted-foreground">Annual Production</p>
               </div>
             </div>
@@ -105,7 +98,7 @@ const Infrastructure = () => {
               <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
                 <Mountain className="h-6 w-6 text-accent" />
               </div>
-              <h2 className="font-heading font-bold text-2xl text-foreground">Our Mines</h2>
+              <h2 className="font-heading font-bold text-2xl text-foreground">Mining Locations</h2>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 items-start">
@@ -129,7 +122,7 @@ const Infrastructure = () => {
                       <h4 className={`font-heading font-semibold ${
                         activeMine.name === mine.name ? "text-accent" : "text-foreground"
                       }`}>{mine.name}</h4>
-                      <p className="text-muted-foreground text-sm">Minerals: {mine.minerals}</p>
+                      <p className="text-muted-foreground text-sm">Mineral: <span className="font-bold text-foreground">{mine.minerals}</span></p>
                     </div>
                   </div>
                 ))}
@@ -156,7 +149,7 @@ const Infrastructure = () => {
               <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
                 <Factory className="h-6 w-6 text-accent" />
               </div>
-              <h2 className="font-heading font-bold text-2xl text-foreground">Manufacturing Plants</h2>
+              <h2 className="font-heading font-bold text-2xl text-foreground">Manufacturing Plants &amp; Google Map Locations</h2>
             </div>
 
             {/* Layout: Map Left, List Right */}
@@ -189,7 +182,7 @@ const Infrastructure = () => {
                     }`}
                   >
                     <div className="flex flex-col">
-                      <span className={`font-medium ${
+                      <span className={`font-bold ${
                         activePlant.name === plant.name ? "text-foreground font-bold" : "text-foreground/80"
                       }`}>{plant.name}</span>
                       <span className="text-muted-foreground text-sm">{plant.location}</span>
@@ -216,16 +209,20 @@ const Infrastructure = () => {
                   <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
                     <FlaskConical className="h-6 w-6 text-accent" />
                   </div>
-                  <h2 className="font-heading font-bold text-2xl text-foreground">Quality Control Laboratory</h2>
+                  <h2 className="font-heading font-bold text-2xl text-foreground">Advanced Quality Control Laboratory</h2>
                 </div>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Our in-house laboratory is equipped with advanced testing equipment for rigorous quality control at every production stage. We test for physical properties, chemical composition, particle size distribution, and other critical parameters.
+                <p className="text-muted-foreground mb-4 leading-relaxed [&_strong]:text-foreground">
+                  <RichText text="At **STONEX ENTERPRISES**, quality is engineered through precision testing and continuous process monitoring. Our in house laboratory evaluates the physical, chemical and performance characteristics of mineral products at every critical stage of manufacturing." />
                 </p>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  With a focus on mineral purity, particle size precision and product consistency, we ensure reliable quality standards that support the diverse requirements of industrial applications.
+                </p>
+                <h3 className="font-heading font-bold text-lg text-foreground mb-4">Key Laboratory Testing Capabilities:</h3>
                 <ul className="space-y-3">
-                  {["Particle Size Analysis", "Chemical Composition Testing", "Brightness & Whiteness Testing", "Moisture Content Analysis", "Oil Absorption Testing"].map((test) => (
+                  {["Particle Size Distribution (PSD) Analysis", "Chemical Composition Analysis", "Brightness & Whiteness Testing", "Moisture Content Analysis", "Oil Absorption Testing"].map((test) => (
                     <li key={test} className="flex items-center gap-3">
                       <div className="w-2 h-2 bg-accent rounded-full" />
-                      <span className="text-foreground">{test}</span>
+                      <span className="text-foreground font-bold">{test}</span>
                     </li>
                   ))}
                 </ul>

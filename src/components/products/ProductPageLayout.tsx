@@ -1,88 +1,64 @@
-import type { ElementType, ReactNode } from "react";
+import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ArrowRight, Beaker, Factory, Layers, Package } from "lucide-react";
 import "@/styles/product-page.css";
 
+import type { ProductContent } from "@/content/products";
+import { RichText } from "@/components/RichText";
+import { pointIcon } from "@/components/products/pointIcon";
+
 export interface ProductSpec {
   label: string;
   value: string;
 }
 
-export interface ProductProperty {
-  icon: ElementType;
-  title: string;
-  description: string;
-}
-
-export interface ProductStep {
-  title: string;
-  description: string;
-}
-
 interface ProductPageLayoutProps {
-  name: string;
   slug: string;
   image: string;
-  description: string;
-  /** Legacy badge text, no longer shown in the hero */
-  purity?: string;
+  content: ProductContent;
   eyebrow?: string;
-  /** Three quick facts under the hero. Defaults to first two specs + capacity. */
-  highlights?: ProductSpec[];
-  whatIsTitle: string;
-  whatIs: string;
-  /** "How we make it" copy shown in the note beside the intro */
-  how: string;
-  specs?: ProductSpec[];
-  capacity?: string;
-  sizes?: string[];
-  sizeNote?: string;
-  packaging?: string[];
   /** Extra product-specific sections rendered after the intro */
   children?: ReactNode;
-  keyPropertiesTitle?: string;
-  keyProperties?: ProductProperty[];
-  processTitle?: string;
-  steps?: ProductStep[];
 }
 
-const Bold = ({ text, term }: { text: string; term: string }) => (
-  <>
-    {text.split(new RegExp(`(${term})`)).map((chunk, i) =>
-      chunk === term ? <strong key={i}>{chunk}</strong> : chunk
-    )}
-  </>
-);
-
 export const ProductPageLayout = ({
-  name,
   slug,
   image,
-  description,
+  content,
   eyebrow = "Premium Mineral Filler",
-  highlights,
-  whatIsTitle,
-  whatIs,
-  how,
-  specs = [],
-  capacity,
-  sizes,
-  sizeNote,
-  packaging,
   children,
-  keyPropertiesTitle,
-  keyProperties,
-  processTitle,
-  steps,
 }: ProductPageLayoutProps) => {
-  const facts =
-    highlights ??
-    [
-      ...specs.slice(0, 2),
-      ...(capacity ? [{ label: "Production Capacity", value: capacity }] : specs.slice(2, 3)),
-    ];
+  const {
+    name,
+    description,
+    how,
+    whatIs,
+    specs = [],
+    capacity,
+    sizes,
+    sizeNote,
+    packaging,
+    sizeTable,
+    typesTitle,
+    typesIntro,
+    types,
+    keyPropertiesTitle,
+    keyProperties,
+    processTitle,
+    steps,
+    applicationsTeaser,
+    whyChooseTitle,
+    whyChoose,
+  } = content;
+
+  const pick = (re: RegExp) => specs.find((s) => re.test(s.label) && s.value);
+  const facts: ProductSpec[] = [
+    pick(/^Purity/),
+    pick(/^Brightness/),
+    capacity ? { label: "Production Capacity", value: capacity } : pick(/^Sizes|^Mohs/),
+  ].filter((f): f is ProductSpec => Boolean(f));
 
   return (
     <div className="min-h-screen">
@@ -104,13 +80,15 @@ export const ProductPageLayout = ({
             <div>
               <span className="product-eyebrow">{eyebrow}</span>
               <h1>{name}</h1>
-              <p className="product-hero-description">{description}</p>
+              <p className="product-hero-description">
+                <RichText text={description} />
+              </p>
               <div className="product-actions" style={{ marginTop: 28 }}>
                 <Link to="/contact" className="stonex-button stonex-button-primary">
                   Enquire Now
                 </Link>
                 <Link to={`/products/${slug}/applications`} className="stonex-button stonex-button-secondary">
-                  View Applications
+                  Explore Application
                 </Link>
               </div>
             </div>
@@ -138,12 +116,14 @@ export const ProductPageLayout = ({
 
         {/* How we manufacture + technical specifications */}
         <section className="product-section product-section-alt">
-          <div className="product-container product-overview-grid">
-            <div className="product-how-card">
-              <p>
-                <Bold text={how} term="STONEX ENTERPRISES" />
-              </p>
-            </div>
+          <div className={`product-container product-overview-grid${how ? "" : " product-overview-single"}`}>
+            {how && (
+              <div className="product-how-card">
+                <p>
+                  <RichText text={how} />
+                </p>
+              </div>
+            )}
 
             <div className="product-spec-card">
               <div className="product-spec-card-header">
@@ -160,7 +140,7 @@ export const ProductPageLayout = ({
                         <span className="product-spec-dot" />
                         <div>
                           <div className="product-spec-label">{spec.label}</div>
-                          <div className="product-spec-value">{spec.value}</div>
+                          {spec.value && <div className="product-spec-value">{spec.value}</div>}
                         </div>
                       </div>
                     ))}
@@ -223,10 +203,77 @@ export const ProductPageLayout = ({
         {/* What is */}
         <section className="product-section">
           <div className="product-container">
-            <h2>{whatIsTitle}</h2>
-            <p className="product-whatis">{whatIs}</p>
+            {whatIs.map((block, i) => (
+              <div key={block.title} style={i > 0 ? { marginTop: 40 } : undefined}>
+                <h2>{block.title}</h2>
+                {block.text.map((para, j) => (
+                  <p key={j} className="product-whatis">
+                    <RichText text={para} />
+                  </p>
+                ))}
+              </div>
+            ))}
           </div>
         </section>
+
+        {/* Size range / product range table */}
+        {sizeTable && sizeTable.rows.length > 1 && (
+          <section className="product-section product-section-alt">
+            <div className="product-container">
+              <div className="product-section-heading">
+                <span className="product-section-kicker">Size Range</span>
+                <h2>{sizeTable.title}</h2>
+              </div>
+              <div className="product-specs-wrap product-narrow" style={{ overflowX: "auto" }}>
+                <table className="product-specs product-range-table">
+                  <thead>
+                    <tr>
+                      {sizeTable.rows[0].map((cell) => (
+                        <th key={cell}>{cell}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {sizeTable.rows.slice(1).map((row) => (
+                      <tr key={row.join("|")}>
+                        {row.map((cell, i) => (
+                          <td key={i}>{cell}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Types (e.g. pebble varieties) */}
+        {types && types.length > 0 && (
+          <section className="product-section">
+            <div className="product-container">
+              <div className="product-section-heading">
+                <span className="product-section-kicker">Varieties</span>
+                <h2>{typesTitle}</h2>
+                {typesIntro && (
+                  <p>
+                    <RichText text={typesIntro} />
+                  </p>
+                )}
+              </div>
+              <div className="product-process-grid">
+                {types.map((type) => (
+                  <div key={type.title} className="product-process-card">
+                    <h3>{type.title}</h3>
+                    <p>
+                      <RichText text={type.description} />
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {children}
 
@@ -240,14 +287,16 @@ export const ProductPageLayout = ({
               </div>
               <div className="product-properties-grid">
                 {keyProperties.map((prop) => {
-                  const Icon = prop.icon;
+                  const Icon = pointIcon(prop.title);
                   return (
                     <div key={prop.title} className="product-property-card">
                       <div className="product-property-icon">
                         <Icon size={20} />
                       </div>
                       <h3>{prop.title}</h3>
-                      <p>{prop.description}</p>
+                      <p>
+                        <RichText text={prop.description} />
+                      </p>
                     </div>
                   );
                 })}
@@ -265,13 +314,20 @@ export const ProductPageLayout = ({
                 <h2>{processTitle ?? `How We Manufacture Premium ${name}`}</h2>
               </div>
               <div className="product-process-grid">
-                {steps.map((step, index) => (
-                  <div key={step.title} className="product-process-card">
-                    <div className="product-process-number">{index + 1}</div>
-                    <h3>{step.title}</h3>
-                    <p>{step.description}</p>
-                  </div>
-                ))}
+                {steps.map((step) => {
+                  const Icon = pointIcon(step.title);
+                  return (
+                    <div key={step.title} className="product-process-card">
+                      <div className="product-property-icon">
+                        <Icon size={20} />
+                      </div>
+                      <h3>{step.title}</h3>
+                      <p>
+                        <RichText text={step.description} />
+                      </p>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </section>
@@ -282,17 +338,49 @@ export const ProductPageLayout = ({
           <div className="product-container">
             <div className="product-section-heading" style={{ marginBottom: 0 }}>
               <span className="product-section-kicker">Applications</span>
-              <h2>Industry Applications</h2>
-              <p>Discover the diverse range of industries and specialized use cases where our {name} excels.</p>
+              <h2>Application Across Industries</h2>
+              {applicationsTeaser && (
+                <p>
+                  <RichText text={applicationsTeaser} />
+                </p>
+              )}
               <div className="product-actions" style={{ justifyContent: "center", marginTop: 24 }}>
                 <Link to={`/products/${slug}/applications`} className="stonex-button stonex-button-primary">
-                  View Applications
+                  Explore Application
                   <ArrowRight size={18} style={{ marginLeft: 8 }} />
                 </Link>
               </div>
             </div>
           </div>
         </section>
+
+        {/* Why choose */}
+        {whyChoose && whyChoose.length > 0 && (
+          <section className="product-section">
+            <div className="product-container">
+              <div className="product-section-heading">
+                <span className="product-section-kicker">Why STONEX</span>
+                <h2>{whyChooseTitle}</h2>
+              </div>
+              <div className="product-properties-grid product-why-grid">
+                {whyChoose.map((item) => {
+                  const Icon = pointIcon(item.title);
+                  return (
+                    <div key={item.title} className="product-property-card">
+                      <div className="product-property-icon">
+                        <Icon size={20} />
+                      </div>
+                      <h3>{item.title}</h3>
+                      <p>
+                        <RichText text={item.description} />
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* CTA */}
         <section className="product-cta">

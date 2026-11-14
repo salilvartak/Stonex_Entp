@@ -1,56 +1,57 @@
+import { RichText } from "@/components/RichText";
 import type React from "react";
 import { useScrollReveal, gridRevealDelay } from "@/hooks/use-scroll-reveal";
 
 const industries = [
   {
     icon: "/Icon%20Images/Paint.png",
-    name: "Paint & Coating",
-    description: "Enhance brightness, whiteness, opacity, smoothness and coating durability",
+    name: "Paints & Coatings",
+    description: "Enhance brightness, whiteness, opacity, surface smoothness and coating performance.",
   },
   {
     icon: "/Icon%20Images/Plastic.png",
-    name: "Plastic & Polymers",
-    description: "Improved stiffness, dimensional stability, smoother surface finish and cost effective efficiency",
+    name: "Plastics & Polymers",
+    description: "Improve stiffness, dimensional stability, surface finish, and formulation cost efficiency.",
   },
   {
     icon: "/Icon%20Images/Slab.png",
-    name: "Quartz & Engineered Stone Slabs",
-    description: "Exceptional hardness, superior durability, scratch, heat and stain resistance, with an elegant aesthetic finish",
+    name: "Quartz & Engineered Stone Surfaces",
+    description: "Exceptional hardness, superior durability, scratch, heat and stain resistance, with an elegant aesthetic finish.",
   },
   {
     icon: "/Icon%20Images/Glass.png",
-    name: "Glass & Ceramic",
-    description: "Enhance structural strength, thermal stability, durability, fluxing performance and consistent formulation performance",
+    name: "Glass & Ceramics",
+    description: "Enhance structural strength, thermal stability, durability, fluxing performance and consistent formulation performance.",
   },
   {
     icon: "/Icon%20Images/Adhesive.png",
-    name: "Adhesive & Sealants",
-    description: "Deliver superior mechanical strength, optimized viscosity, enhanced stability, long-lasting durability and cost-effective",
+    name: "Adhesives & Sealants",
+    description: "Deliver mechanical strength, optimized viscosity, enhanced dimensional stability, long lasting durability and formulation cost efficiency.",
   },
   {
     icon: "/Icon%20Images/Rubber.png",
     name: "Rubber & Elastomer",
-    description: "Enhance reinforcement, tensile strength, tear resistance, resilience, and processing efficiency",
+    description: "Support reinforcement, tensile properties, tear resistance, dimensional stability and processing efficiency.",
   },
   {
     icon: "/Icon%20Images/Paper.png",
     name: "Paper & Paperboard",
-    description: "Improve brightness, opacity, smoothness, print ability and surface quality",
+    description: "Improve brightness, opacity, smoothness, printability and surface quality.",
   },
   {
     icon: "/Icon%20Images/Agriculture.png",
     name: "Agriculture & Animal Nutrition",
-    description: "Improve soil conditioning, elevate fertilizer performance and provide essential nutrients for plants and animals",
+    description: "Improve soil conditioning, elevate fertilizer performance and provide essential nutrients for plants and animals.",
   },
   {
     icon: "/Icon%20Images/Construction.png",
     name: "Construction & Building Materials",
-    description: "Support strength, durability, dimensional stability, particle packing and cost-effective formulations",
+    description: "Support strength, durability, dimensional stability, particle packing and cost effective formulations.",
   },
   {
     icon: "/Icon%20Images/Masterbatch.png",
     name: "Masterbatch & Filler Compounds",
-    description: "Improve filler dispersion, melt processability, stiffness, dimensional stability, surface finish and cost efficiency",
+    description: "Improve filler dispersion, melt processability, stiffness, dimensional stability, surface finish and cost efficiency.",
   },
 ];
 
@@ -69,7 +70,7 @@ export const IndustriesSection = () => {
             Powering Diverse Industries
           </h2>
           <p data-reveal style={{ "--reveal-delay": "200ms" } as React.CSSProperties} className="reveal text-muted-foreground text-lg">
-            <span className="font-bold">Stonex Enterprises</span> is a leading Manufacturer and Supplier of Premium Quality Minerals Filler and Extender. We deliver excellent quality products with the use of advanced technology and timely delivering to them.
+            <RichText text="**STONEX ENTERPRISES** delivers versatile mineral solutions for a wide range of industrial applications, supporting product performance, formulation efficiency and consistent quality across diverse sectors." />
           </p>
         </div>
 
@@ -90,7 +91,7 @@ export const IndustriesSection = () => {
                   loading="lazy"
                   className="w-24 h-24 object-contain mx-auto mb-4 transition-transform duration-300 group-hover:scale-110"
                 />
-                <h3 className="font-heading font-semibold text-foreground mb-2">
+                <h3 className="font-heading font-bold text-foreground mb-2">
                   {industry.name}
                 </h3>
                 <p className="text-muted-foreground text-sm">

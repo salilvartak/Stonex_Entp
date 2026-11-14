@@ -366,3 +366,17 @@
 @media (max-width: 480px) {
   .product-page .product-spec-grid { grid-template-columns: 1fr; }
 }
+
+/* Content-driven additions */
+.product-page .product-overview-single { grid-template-columns: minmax(0, 1fr); max-width: 900px; }
+.product-page .product-range-table th { width: auto; }
+.product-page .product-range-table thead th { background: var(--stonex-navy); color: #fff; }
+.product-page .product-why-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.product-page strong { font-weight: 700; color: var(--stonex-navy); }
+@media (max-width: 1024px) {
+  .product-page .product-why-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 768px) {
+  .product-page .product-why-grid { grid-template-columns: 1fr; }
+}
+.product-page .product-how-card strong { color: #fff; }
