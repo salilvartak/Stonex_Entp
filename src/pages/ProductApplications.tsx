@@ -77,36 +77,43 @@ const ProductApplications = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="home-typography min-h-screen">
       <Header />
       
-      <main className="pt-24 pb-16 overflow-x-clip">
-        {/* Header Section */}
-        <section className="container mx-auto px-4 mb-16 text-center">
+      <main className="overflow-x-clip">
+        {/* Header Section - navy banner, same as the home page hero/CTA */}
+        <section className="pt-40 pb-20 bg-gradient-to-br from-primary via-primary to-secondary relative overflow-hidden text-center">
+          <div className="absolute top-0 left-0 w-72 h-72 bg-accent/10 rounded-full -translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full translate-x-1/3 translate-y-1/3" />
+          <div className="container mx-auto px-4 relative z-10">
             <div className="inline-block mb-4">
-                <Link to={`/products/${productId}`} className="flex items-center text-muted-foreground hover:text-primary transition-colors text-sm font-medium">
+                <Link to={`/products/${productId}`} className="flex items-center text-primary-foreground/70 hover:text-accent transition-colors text-sm font-medium">
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     Back to Product Details
                 </Link>
             </div>
-            <h1 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
-                <span className="text-primary">{product.title}</span>
+            <span className="eyebrow text-accent font-semibold uppercase tracking-wider text-sm mb-3 block">
+                Application Across Industries
+            </span>
+            <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary-foreground mb-4">
+                {product.title}
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-primary-foreground/90 max-w-2xl mx-auto">
                 {product.intro ? (
                   <RichText text={product.intro} />
                 ) : (
                   <>Explore the versatile industrial uses and technical benefits of our premium {product.name}.</>
                 )}
             </p>
+          </div>
         </section>
 
-        {/* Applications List */}
-        <div className="container mx-auto px-4 space-y-24">
+        {/* Applications List - alternating light bands like the home page */}
+        <div>
           {product.sections.map((section, index) => (
+            <section key={index} className={`py-20 ${index % 2 === 0 ? "bg-background" : "bg-muted"}`}>
             <div
-              key={index}
-              className="[&::after]:content-[''] [&::after]:block [&::after]:clear-both"
+              className="container mx-auto px-4 [&::after]:content-[''] [&::after]:block [&::after]:clear-both"
             >
               {/* Image floats top, text wraps beside it then spans full width once it runs past the image */}
               <motion.div
@@ -124,7 +131,7 @@ const ProductApplications = () => {
 
               <motion.h2
                 {...slideIn(index % 2 === 0 ? 100 : -100, 0.15, reduceMotion)}
-                className="text-3xl font-bold text-foreground border-l-4 border-primary pl-4 mb-6"
+                className="text-3xl font-bold text-foreground border-l-4 border-accent pl-4 mb-6"
               >
                 {section.title}
               </motion.h2>
@@ -139,10 +146,10 @@ const ProductApplications = () => {
                       {...slideIn(index % 2 === 0 ? 60 : -60, 0.25 + 0.08 * i, reduceMotion)}
                       className="flex items-start gap-3"
                     >
-                      <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                        <Icon className="h-5 w-5 text-primary" />
+                      <div className="w-9 h-9 rounded-lg bg-primary ring-2 ring-accent/60 flex items-center justify-center shrink-0">
+                        <Icon className="h-5 w-5 text-accent" />
                       </div>
-                      <span className="text-muted-foreground text-lg leading-snug">
+                      <span className="text-muted-foreground text-lg leading-snug [&_strong]:text-foreground">
                           <span className="font-heading font-bold text-foreground">{point.title}: </span>
                           <RichText text={point.description} />
                         </span>
@@ -162,10 +169,10 @@ const ProductApplications = () => {
                         {...slideIn(index % 2 === 0 ? 60 : -60, 0.25 + 0.08 * i, reduceMotion)}
                         className="flex items-start gap-3"
                       >
-                        <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                          <Icon className="h-5 w-5 text-primary" />
+                        <div className="w-9 h-9 rounded-lg bg-primary ring-2 ring-accent/60 flex items-center justify-center shrink-0">
+                          <Icon className="h-5 w-5 text-accent" />
                         </div>
-                        <span className="text-muted-foreground text-lg leading-snug">
+                        <span className="text-muted-foreground text-lg leading-snug [&_strong]:text-foreground">
                             <span className="font-heading font-bold text-foreground">{point.title}: </span>
                             <RichText text={point.description} />
                           </span>
@@ -175,18 +182,26 @@ const ProductApplications = () => {
                 </ul>
               )}
             </div>
+            </section>
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <section className="container mx-auto px-4 mt-24">
-            <div className="bg-muted rounded-3xl p-8 md:p-12 text-center">
-                <h3 className="text-2xl font-bold text-foreground mb-4">Need technical specifications?</h3>
-                <p className="text-muted-foreground mb-8">View the full technical data sheet and chemical composition.</p>
-                <Button variant="default" size="lg" asChild>
-                    <Link to={`/products/${productId}`}>View Product Details</Link>
-                </Button>
+        {/* Bottom CTA - same navy gradient as the home page CTA */}
+        <section className="py-20 bg-gradient-to-br from-primary via-primary to-secondary relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-72 h-72 bg-accent/10 rounded-full -translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full translate-x-1/3 translate-y-1/3" />
+          <div className="container mx-auto px-4 relative z-10 text-center">
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary-foreground mb-4">Need technical specifications?</h2>
+            <p className="text-xl text-primary-foreground/90 mb-10">View the full technical data sheet and chemical composition.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="cta" size="xl" asChild>
+                <Link to={`/products/${productId}`}>View Product Details</Link>
+              </Button>
+              <Button variant="heroOutline" size="xl" asChild>
+                <Link to="/contact">Get a Quote</Link>
+              </Button>
             </div>
+          </div>
         </section>
       </main>
 
